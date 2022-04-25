@@ -1,27 +1,59 @@
 import React from "react";
+import Header from "../components/Header";
 
 export default function SignUp() {
   return (
-    <form>
-      <div class="row mb-3">
-        <label for="inputEmail3" class="col-sm-2 col-form-label">
-          Email
-        </label>
-        <div class="col-sm-10">
-          <input type="email" class="form-control" id="inputEmail3" />
+    <div>
+      <Header />
+      <form>
+      <div className="mb-3">
+          <label htmlFor="first-name-input" className="form-label">
+            First Name
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="first-name-input"
+          />
         </div>
-      </div>
-      <div class="row mb-3">
-        <label for="inputPassword3" class="col-sm-2 col-form-label">
-          Password
-        </label>
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword3" />
+        <div className="mb-3">
+          <label htmlFor="last-name-input" className="form-label">
+            Last Name
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="last-name-input"
+          />
         </div>
-      </div>
-      <button type="submit" class="btn btn-primary">
-        Sign Up
-      </button>
-    </form>
+        <div className="mb-3">
+          <label htmlFor="exampleInputEmail1" className="form-label">
+            Email address
+          </label>
+          <input
+            type="email"
+            className="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+          <div id="emailHelp" className="form-text">
+            We'll never share your email with anyone else.
+          </div>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="exampleInputPassword1" className="form-label">
+            Password
+          </label>
+          <input
+            type="password"
+            className="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
+      </form>
+    </div>
   );
 }

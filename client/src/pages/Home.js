@@ -7,9 +7,9 @@ export default function Home() {
       <div>
         <Header />
       </div>
-      <body>
+      <main>
         <h1>Wecome to our webiste designed for freelancers like YOU!</h1>
-      </body>
+      </main>
     </>
   );
 }
