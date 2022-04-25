@@ -14,7 +14,6 @@ db.once('open', async () => {
   console.log('categories seeded');
 
   await User.deleteMany();
-
   const users = await User.create([
     { 
       firstName: 'Test',
