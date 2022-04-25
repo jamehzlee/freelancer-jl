@@ -8,6 +8,13 @@ const resolvers = {
     categories: async () => {
       return await Category.find();
     },
+
+    job: async (parent, { jobID }, context) => {
+      const job = await Job.findById(jobID);
+
+      return job;
+    },
+
     jobs: async (parent, { category, name }) => {
       const params = {};
 
@@ -21,11 +28,15 @@ const resolvers = {
         };
       }
 
-      return await Job.find(params).populate('category');
+      return await Job.find(params).populate('category').populate('user');
     },
-    // job: async (parent, { _id }) => {
-    //   return await Job.findById(_id).populate('category');
-    // },
+
+    user: async (parent, args, context) => {
+      const user = await User.findById(context.user._id);
+      
+      return user;
+    }
+
   },
   Mutation: {
     addUser: async (parent, args) => {
@@ -34,18 +45,31 @@ const resolvers = {
 
       return { token, user };
     },
-    updateUser: async (parent, args, context) => {
-      if (context.user) {
-        return await User.findByIdAndUpdate(context.user._id, args, { new: true });
-      }
 
-      throw new AuthenticationError('Not logged in');
-    },
-    // updatejob: async (parent, { _id, quantity }) => {
-    //   const decrement = Math.abs(quantity) * -1;
+    // updateUser: async (parent, {firstName, lastName, email, password }) => {
+    //   const user = await User.findByIdAndUpdate(id, {firstName, lastName, email, password}, { new: true });
 
-    //   return await Job.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
+    //   return user;
     // },
+
+    addJob: async (parent, args, context) => {
+      const job = await Job.create({...args, user: context.user._id});
+
+      return job;
+    },
+
+    updateJob: async (parent, { id, name, description, price }) => {
+      const job = await Job.findByIdAndUpdate(id, {name, description, price}, { new: true }).populate('category');
+
+      return job;
+    },
+
+    deleteJob: async (parent, args) => {
+      const job = await Job.findByIdAndDelete(args.id);
+
+      return job;
+    },
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
@@ -62,7 +86,7 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
-    }
+    },
   }
 };
 
