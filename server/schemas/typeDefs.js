@@ -6,20 +6,13 @@ const typeDefs = gql`
     name: String
   }
 
-  type Product {
+  type Job {
     _id: ID
     name: String
     description: String
-    image: String
-    quantity: Int
     price: Float
     category: Category
-  }
-
-  type Order {
-    _id: ID
-    purchaseDate: String
-    products: [Product]
+    user: User
   }
 
   type User {
@@ -27,11 +20,6 @@ const typeDefs = gql`
     firstName: String
     lastName: String
     email: String
-    orders: [Order]
-  }
-
-  type Checkout {
-    session: ID
   }
 
   type Auth {
@@ -41,18 +29,16 @@ const typeDefs = gql`
 
   type Query {
     categories: [Category]
-    products(category: ID, name: String): [Product]
-    product(_id: ID!): Product
+    jobs(category: ID, name: String): [Job]
+    product(_id: ID!): Job
     user: User
-    order(_id: ID!): Order
-    checkout(products: [ID]!): Checkout
   }
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    addOrder(products: [ID]!): Order
+    addOrder(jobs: [ID]!): Order
     updateUser(firstName: String, lastName: String, email: String, password: String): User
-    updateProduct(_id: ID!, quantity: Int!): Product
+    updateJob(_id: ID!, quantity: Int!): Job
     login(email: String!, password: String!): Auth
   }
 `;
