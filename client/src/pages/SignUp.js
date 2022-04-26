@@ -8,7 +8,7 @@ export default function SignUp() {
       <form>
       <div className="mb-3">
           <label htmlFor="first-name-input" className="form-label">
-            First Name
+            First 
           </label>
           <input
             type="text"
