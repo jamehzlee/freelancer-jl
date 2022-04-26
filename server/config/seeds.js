@@ -7,6 +7,7 @@ db.once('open', async () => {
   const categories = await Category.insertMany([
     { name: 'Tech' },
     { name: 'Audio'},
+    { name: 'Art'}
 
 
   ]);
@@ -69,6 +70,46 @@ db.once('open', async () => {
       description:
         'I will edit your podcast episodes. Clean up your recordings while also making the finished product sound industry standard',
       category: categories[1]._id,
+      price: 199.99,
+      user: users[0]
+    },
+    {
+      name: 'Mix Your Song',
+      description:
+        'I will mix your audio files and have your song sounding its best.',
+      category: categories[1]._id,
+      price: 399.99,
+      user: users[0]
+    },
+    {
+      name: 'Master Your Song',
+      description:
+        'I will master your audio files and have your finshed song file sounding radio radio',
+      category: categories[1]._id,
+      price: 199.99,
+      user: users[0]
+    },
+    {
+      name: 'Produce a Song',
+      description:
+        'I will create a song to your specifications. Have music to call your own!',
+      category: categories[1]._id,
+      price: 999.99,
+      user: users[0]
+    },
+    {
+      name: 'Audio Branding',
+      description:
+        'I will create an audio tag for your social media content',
+      category: categories[1]._id,
+      price: 299.99,
+      user: users[0]
+    },
+    {
+      name: 'Digital Art',
+      description:
+        'Will take an old photograph and give it a fresh rendered appearnce',
+      category: categories[2]._id,
       price: 199.99,
       user: users[0]
     },
