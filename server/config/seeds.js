@@ -100,7 +100,7 @@ db.once('open', async () => {
     {
       name: 'Audio Branding',
       description:
-        'I will create an audio tag for your social media content',
+        'I will create an audio tag for your social media content.',
       category: categories[1]._id,
       price: 299.99,
       user: users[0]
@@ -108,9 +108,41 @@ db.once('open', async () => {
     {
       name: 'Digital Art',
       description:
-        'Will take an old photograph and give it a fresh rendered appearnce',
+        'Will take an old photograph and give it a fresh rendered appearnce.',
       category: categories[2]._id,
       price: 199.99,
+      user: users[0]
+    },
+    {
+      name: 'Pop Art',
+      description:
+        'I will create pop art based on any character of your choosing.',
+      category: categories[2]._id,
+      price: 299.99,
+      user: users[0]
+    },
+    {
+      name: 'Illustrations',
+      description:
+        'I will illustrate a scene that you describe and bring memories to life.',
+      category: categories[2]._id,
+      price: 499.99,
+      user: users[0]
+    },
+    {
+      name: 'Photoshop',
+      description:
+        'I will edit an album of photos using state of the art software and features.',
+      category: categories[2]._id,
+      price: 299.99,
+      user: users[0]
+    },
+    {
+      name: 'Video Editing',
+      description:
+        'I will edit a video up to 10 minutes in length with industry standard tools.',
+      category: categories[2]._id,
+      price: 699.99,
       user: users[0]
     },
   ]);
