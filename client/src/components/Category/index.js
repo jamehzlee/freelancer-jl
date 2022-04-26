@@ -11,7 +11,7 @@ export default function Category() {
             <ul className="navbar-nav">
               <li className="nav-item">
                 <a className="nav-link text-dark" href="#">
-                 Art
+                  Art
                 </a>
               </li>
               <li className="nav-item">
@@ -59,14 +59,7 @@ export default function Category() {
           </div>
         </div>
       </nav>
-      <hr />
-      <div className="card-container">
-        <JobCard />
-        <JobCard />
-        <JobCard />
-        <JobCard />
-        <JobCard />
-      </div>
+      <br/>
     </div>
   );
 }

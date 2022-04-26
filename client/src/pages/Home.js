@@ -1,20 +1,17 @@
 import React from "react";
 import Category from "../components/Category";
 import Header from "../components/Header";
-import JobCard from "../components/JobCard";
+import { Outlet } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import { QUERY_ALL_Job } from "../utils/queries";
 
 export default function Home() {
+  
   return (
-    <>
-      <div>
-        <Header />
-      </div>
-      <main>
-        <h1>Welcome to our webiste designed for freelancers like YOU!</h1>
-      </main>
-      <div>
-        <Category />
-      </div>
-    </>
+    <div>
+      <Header />
+
+      <Outlet />
+    </div>
   );
 }

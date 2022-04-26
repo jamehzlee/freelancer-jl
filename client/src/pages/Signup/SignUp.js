@@ -1,31 +1,21 @@
 import React from "react";
-import Header from "../../components/Header";
-import "./signup.css"
+import "./signup.css";
 
 export default function SignUp() {
   return (
     <div>
-      <Header />
       <form className="signup-form d-flex justify-content-center align-items-center flex-column">
-      <div className="mb-3 d-flex justify-content-center align-items-center flex-column">
+        <div className="mb-3 d-flex justify-content-center align-items-center flex-column">
           <label htmlFor="first-name-input" className="form-label">
-            First 
+            First
           </label>
-          <input
-            type="text"
-            className="form-control"
-            id="first-name-input"
-          />
+          <input type="text" className="form-control" id="first-name-input" />
         </div>
         <div className="mb-3 d-flex justify-content-center align-items-center flex-column">
           <label htmlFor="last-name-input" className="form-label">
             Last Name
           </label>
-          <input
-            type="text"
-            className="form-control"
-            id="last-name-input"
-          />
+          <input type="text" className="form-control" id="last-name-input" />
         </div>
         <div className="mb-3 d-flex justify-content-center align-items-center flex-column">
           <label htmlFor="exampleInputEmail1" className="form-label">

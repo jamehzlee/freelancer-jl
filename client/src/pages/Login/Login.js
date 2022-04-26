@@ -1,11 +1,9 @@
 import React from "react";
-import Header from "../../components/Header";
 import "./login.css";
 
 export default function Login() {
   return (
     <>
-      <Header />
       <div className="row justify-content-center">
         <form className=" col col-8 login-form">
           <div className="mb-3 justify-content-center">
