@@ -39,32 +39,38 @@ const resolvers = {
 
   },
   Mutation: {
-    addUser: async (parent, args) => {
+    userAdd: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
 
       return { token, user };
     },
 
-    // updateUser: async (parent, {firstName, lastName, email, password }) => {
-    //   const user = await User.findByIdAndUpdate(id, {firstName, lastName, email, password}, { new: true });
+    // userUpdate: async (parent, {firstName, lastName, email, password }, context) => {
+    //   const user = await User.findByIdAndUpdate(context.user._id, {firstName, lastName, email, password}, { new: true });
 
     //   return user;
     // },
 
-    addJob: async (parent, args, context) => {
+    userDelete: async (parent, args) => {
+      const user = await User.findByIdAndDelete(args.id)
+
+      return user;
+    },
+
+    jobAdd: async (parent, args, context) => {
       const job = await Job.create({...args, user: context.user._id});
 
       return job;
     },
 
-    updateJob: async (parent, { id, name, description, price }) => {
+    jobUpdate: async (parent, { id, name, description, price }) => {
       const job = await Job.findByIdAndUpdate(id, {name, description, price}, { new: true }).populate('category');
 
       return job;
     },
 
-    deleteJob: async (parent, args) => {
+    jobDelete: async (parent, args) => {
       const job = await Job.findByIdAndDelete(args.id);
 
       return job;
@@ -78,7 +84,6 @@ const resolvers = {
       }
 
       const correctPw = await user.isCorrectPassword(password);
-
       if (!correctPw) {
         throw new AuthenticationError('Incorrect credentials');
       }
