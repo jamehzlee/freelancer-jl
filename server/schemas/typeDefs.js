@@ -37,12 +37,12 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    updateUser(firstName: String, lastName: String, email: String, password: String): User
-    deleteUser(id: ID!): User
-    addJob(name: String!, description: String!, price: Float!, category: ID!): Job
-    updateJob(id: ID!, name: String, description: String, price: Float): Job
-    deleteJob(id: ID!): Job
+    userAdd(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    userUpdate(firstName: String, lastName: String, email: String, password: String): User
+    userDelete(id: ID!): User
+    jobAdd(name: String!, description: String!, price: Float!, category: ID!): Job
+    jobUpdate(id: ID!, name: String, description: String, price: Float): Job
+    jobDelete(id: ID!): Job
     login(email: String!, password: String!): Auth
   }
 `;
