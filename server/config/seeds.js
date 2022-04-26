@@ -7,7 +7,9 @@ db.once('open', async () => {
   const categories = await Category.insertMany([
     { name: 'Tech' },
     { name: 'Audio'},
-    { name: 'Art'}
+    { name: 'Art'},
+    { name: 'Cooking'},
+    { name: 'Social Media'}
 
 
   ]);
@@ -145,6 +147,87 @@ db.once('open', async () => {
       price: 699.99,
       user: users[0]
     },
+    {
+      name: 'Personal Chef',
+      description:
+        'Experienced chef willing to travel and cook meals to help meet your lifestlye demands. ',
+      category: categories[3]._id,
+      price: 1699.99,
+      user: users[0]
+    },
+    {
+      name: 'Virtual Cooking Lessons',
+      description:
+        'Sign up for virtual cooking lessons and explore fun and unique recipes! ',
+      category: categories[3]._id,
+      price: 399.99,
+      user: users[0]
+    },
+    {
+      name: 'Baking Tutorial',
+      description:
+        'Learn to bake some delicious new treats with real time guidance!',
+      category: categories[3]._id,
+      price: 199.99,
+      user: users[0]
+    },
+    {
+      name: 'Meal Prep',
+      description:
+        'An experienced nutrionist here to set you up for a week of meals based on your dietary needs.',
+      category: categories[3]._id,
+      price: 99.99,
+      user: users[0]
+    },
+    {
+      name: 'Food Truck',
+      description:
+        'Located around the United States we would love to make an apperance at your next event!',
+      category: categories[3]._id,
+      price: 249.99,
+      user: users[0]
+    },
+    {
+      name: 'Get More Followers',
+      description:
+        'I will work with you to increase the amount of followers you have across your social media networks.',
+      category: categories[4]._id,
+      price: 249.99,
+      user: users[0]
+    },
+    {
+      name: 'Get Verified',
+      description:
+        'I will work with you towards getting verified on a social media network of your choosing.',
+      category: categories[4]._id,
+      price: 749.99,
+      user: users[0]
+    },
+    {
+      name: 'Press Release',
+      description:
+        'Let us write a press release for your next product!',
+      category: categories[4]._id,
+      price: 299.99,
+      user: users[0]
+    },
+    {
+      name: 'Social Media Manager',
+      description:
+        'Let us operate your social media accounts so you can focus on the important stuff!',
+      category: categories[4]._id,
+      price: 499.99,
+      user: users[0]
+    },
+    {
+      name: 'Follower Engagement',
+      description:
+        'Increase the engagement your following has with your content organically.',
+      category: categories[4]._id,
+      price: 299.99,
+      user: users[0]
+    },
+
   ]);
 
   console.log('jobs seeded');
