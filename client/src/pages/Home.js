@@ -14,10 +14,7 @@ export default function Home() {
       </main>
       <div>
         <Category />
-        <Category />
-        <Category />
       </div>
-     
     </>
   );
 }

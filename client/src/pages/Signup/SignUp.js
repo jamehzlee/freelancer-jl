@@ -1,12 +1,13 @@
 import React from "react";
-import Header from "../components/Header";
+import Header from "../../components/Header";
+import "./signup.css"
 
 export default function SignUp() {
   return (
     <div>
       <Header />
-      <form>
-      <div className="mb-3">
+      <form className="signup-form d-flex justify-content-center align-items-center flex-column">
+      <div className="mb-3 d-flex justify-content-center align-items-center flex-column">
           <label htmlFor="first-name-input" className="form-label">
             First 
           </label>
@@ -16,7 +17,7 @@ export default function SignUp() {
             id="first-name-input"
           />
         </div>
-        <div className="mb-3">
+        <div className="mb-3 d-flex justify-content-center align-items-center flex-column">
           <label htmlFor="last-name-input" className="form-label">
             Last Name
           </label>
@@ -26,7 +27,7 @@ export default function SignUp() {
             id="last-name-input"
           />
         </div>
-        <div className="mb-3">
+        <div className="mb-3 d-flex justify-content-center align-items-center flex-column">
           <label htmlFor="exampleInputEmail1" className="form-label">
             Email address
           </label>
@@ -40,7 +41,7 @@ export default function SignUp() {
             We'll never share your email with anyone else.
           </div>
         </div>
-        <div className="mb-3">
+        <div className="mb-3 d-flex justify-content-center align-items-center flex-column">
           <label htmlFor="exampleInputPassword1" className="form-label">
             Password
           </label>
