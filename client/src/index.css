@@ -9,7 +9,7 @@
   --spacing-two: calc(1rem);
 }
 
-* {
+/* * {
   box-sizing: border-box;
 }
 
@@ -201,7 +201,7 @@ input:focus {
 
 .error-text {
   color: var(--error);
-}
+} */
 
 @media screen and (max-width: 768px) {
   .card {
