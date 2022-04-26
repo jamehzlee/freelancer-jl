@@ -6,7 +6,6 @@ import { useQuery } from "@apollo/client";
 import { QUERY_ALL_Job } from "../utils/queries";
 
 export default function Home() {
-  
   return (
     <div>
       <Header />
