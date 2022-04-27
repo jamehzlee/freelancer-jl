@@ -1,17 +1,20 @@
-import './index.css'
+import "./index.css";
 import React from "react";
-import { Header, Footer } from "../../components"
+import { Header, Footer } from "../../components";
 import { Outlet } from "react-router-dom";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
 
 export default function Home() {
-  
   return (
-    <div>
-      <Header />
-      <div className="row justify-content-center">
+    <Container className="page">
+      <Row className="row-content justify-content-center">
+        <Header />
+
         <Outlet />
-      </div>
-      <Footer />
-    </div>
+
+        <Footer />
+      </Row>
+    </Container>
   );
 }
