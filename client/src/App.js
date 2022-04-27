@@ -7,10 +7,8 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import Home from "./pages/Home";
-import SignUp from "./pages/Signup/SignUp";
-import Login from "./pages/Login/Login";
-import Job from "./pages/Job";
+
+import { Home, Job, Login, SignUp } from "./pages"
 import Listing from "./components/Listing"
 
 const httpLink = createHttpLink({

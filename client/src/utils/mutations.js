@@ -11,32 +11,14 @@ export const LOGIN = gql`
   }
 `;
 
-export const ADD_ORDER = gql`
-  mutation addOrder($products: [ID]!) {
-    addOrder(products: $products) {
-      purchaseDate
-      products {
-        _id
-        name
-        description
-        price
-        quantity
-        category {
-          name
-        }
-      }
-    }
-  }
-`;
-
 export const ADD_USER = gql`
-  mutation addUser(
+  mutation userAdd(
     $firstName: String!
     $lastName: String!
     $email: String!
     $password: String!
   ) {
-    addUser(
+    userAdd(
       firstName: $firstName
       lastName: $lastName
       email: $email
@@ -49,3 +31,54 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const DELETE_USER = gql`
+  mutation UserAdd($id: ID!) {
+    userDelete(id: $id) {
+      _id
+    }
+}
+`
+
+export const ADD_JOB = gql`
+  mutation JobAdd($name: String!, $description: String!, $price: Float!, $category: ID!) {
+    jobAdd(name: $name, description: $description, price: $price, category: $category) {
+      _id
+      price
+      description
+      name
+      category {
+        _id
+        name
+      }
+    }
+  }
+`
+export const UPDATE_JOB = gql`
+  mutation JobUpdate($jobUpdateId: ID!, $name: String, $description: String, $price: Float) {
+    jobUpdate(id: $jobUpdateId, name: $name, description: $description, price: $price) {
+      _id
+      name
+      description
+      price
+      category {
+        _id
+        name
+      }
+    }
+  }
+`
+export const DELETE_JOB = gql`
+  mutation JobDelete($jobDeleteId: ID!) {
+    jobDelete(id: $jobDeleteId) {
+      _id
+      name
+      description
+      price
+      category {
+        _id
+        name
+      }
+    }
+  }
+`
