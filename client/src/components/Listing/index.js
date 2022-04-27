@@ -1,5 +1,5 @@
+import "./index.css";
 import React from "react";
-import "./listing.css";
 import Category from "../Category";
 import JobCard from "../JobCard";
 

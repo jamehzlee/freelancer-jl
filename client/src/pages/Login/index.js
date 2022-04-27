@@ -1,11 +1,12 @@
-import "./login.css";
+import "./index.css";
 import React, { useState } from "react";
 import { QUERY_USER } from '../../utils/queries'
 import { useQuery } from "@apollo/client";
-import { Form, Row, Col } from 'react-bootstrap'
+import { Form, Button, Col } from 'react-bootstrap'
 
 export default function Login() {
   const [valid, setValid] = useState(false);
+  const [email, setEmail] = useState('')
   const {user, data } = useQuery(QUERY_USER);
   
   const handleSubmit = (e) => {
@@ -20,8 +21,7 @@ export default function Login() {
   return (
     <Col lg={4} md={6} sm={9}>
         <Form noValidate validated={valid} onSubmit={handleSubmit}>
-          <Row>
-            <Form.Group as={Col}>
+            <Form.Group className="mb-4">
               <Form.Label hidden='true'>Email Address</Form.Label>
               <Form.Control 
                 required
@@ -30,18 +30,19 @@ export default function Login() {
                 className=""/>
               <Form.Control.Feedback type="invalid">Please enter a valid email address.</Form.Control.Feedback>
             </Form.Group>
-          </Row>
-          <Row>
-            <Form.Group as={Col}>
+
+            <Form.Group className="mb-4">
               <Form.Label hidden='true'>Password</Form.Label>
               <Form.Control 
                 required
                 type="password"
                 placeholder="Password"
                 className=""/>
-              <Form.Control.Feedback type="invalid">Please enter a valid email address.</Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">Please enter a password.</Form.Control.Feedback>
             </Form.Group>
-          </Row>
+            <Button variant="primary" type="submit">
+              Log In
+            </Button>
         </Form>
     </Col>
   );
