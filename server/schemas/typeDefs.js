@@ -30,9 +30,11 @@ const typeDefs = gql`
 
   type Query {
     categories: [Category]
-    jobs(category: ID, name: String): [Job]
+    jobsByCategory(category: ID): [Job]
     job(jobID: ID!): Job
     user: User
+    jobs:[Job]
+
   }
 
   type Mutation {

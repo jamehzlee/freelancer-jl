@@ -1,7 +1,7 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { User, Job, Category } = require('../models');
-const { signToken } = require('../utils/auth');
-const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const { AuthenticationError } = require("apollo-server-express");
+const { User, Job, Category } = require("../models");
+const { signToken } = require("../utils/auth");
+const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
 const resolvers = {
   Query: {
@@ -10,12 +10,15 @@ const resolvers = {
     },
 
     job: async (parent, { jobID }, context) => {
-      const job = await Job.findById(jobID);
+      const job = await Job.findById(jobID).populate("category").populate("user");
 
       return job;
     },
+    jobs: async () => {
+      return await Job.find().populate("category").populate("user");
+    },
 
-    jobs: async (parent, { category, name }) => {
+    jobsByCategory: async (parent, { category, name }) => {
       const params = {};
 
       if (category) {
@@ -24,19 +27,18 @@ const resolvers = {
 
       if (name) {
         params.name = {
-          $regex: name
+          $regex: name,
         };
       }
 
-      return await Job.find(params).populate('category').populate('user');
+      return await Job.find(params).populate("category").populate("user");
     },
 
     user: async (parent, args, context) => {
       const user = await User.findById(context.user._id);
-      
-      return user;
-    }
 
+      return user;
+    },
   },
   Mutation: {
     userAdd: async (parent, args) => {
@@ -53,19 +55,23 @@ const resolvers = {
     // },
 
     userDelete: async (parent, args) => {
-      const user = await User.findByIdAndDelete(args.id)
+      const user = await User.findByIdAndDelete(args.id);
 
       return user;
     },
 
     jobAdd: async (parent, args, context) => {
-      const job = await Job.create({...args, user: context.user._id});
+      const job = await Job.create({ ...args, user: context.user._id });
 
       return job;
     },
 
     jobUpdate: async (parent, { id, name, description, price }) => {
-      const job = await Job.findByIdAndUpdate(id, {name, description, price}, { new: true }).populate('category');
+      const job = await Job.findByIdAndUpdate(
+        id,
+        { name, description, price },
+        { new: true }
+      ).populate("category");
 
       return job;
     },
@@ -80,19 +86,19 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError("Incorrect credentials");
       }
 
       const correctPw = await user.isCorrectPassword(password);
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError("Incorrect credentials");
       }
 
       const token = signToken(user);
 
       return { token, user };
     },
-  }
+  },
 };
 
 module.exports = resolvers;
