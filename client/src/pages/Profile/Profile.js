@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import "./profile.css";
+import audioWave from "../../assets/audioWave.jpeg"
 export default function Profile() {
     // still needs query using apollo client to get user data
     const [userInfo, setUserInfo] = useState({
@@ -31,12 +32,11 @@ export default function Profile() {
                     </Card.Body>
                 </Card>
                 <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Img variant="top" src={audioWave}/>
                     <Card.Body>
-                        <Card.Title>Job Title</Card.Title>
+                        <Card.Title>Audio Engineer</Card.Title>
                         <Card.Text>
-                            Some quick example text to build on the card title
-                            and make up the bulk of the card's content.
+                            I will edit your podcast
                         </Card.Text>
                     </Card.Body>
                 </Card>
