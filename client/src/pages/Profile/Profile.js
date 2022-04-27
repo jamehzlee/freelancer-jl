@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col, Card, Button, ListGroup, ListGroupItem } from "react-bootstrap";
 import "./profile.css";
 import audioWave from "../../assets/audioWave.jpeg"
 export default function Profile() {
@@ -12,45 +12,23 @@ export default function Profile() {
     return (
         <Container>
             <Row>
-                <Col></Col>
-                <Col xs={6}>
-                    <h1>Profile Page</h1>
-                    <p>{userInfo.firstName + " " + userInfo.lastName}</p>
-                    <p>{userInfo.email}</p>
-                </Col>
-                <Col></Col>
-            </Row>
-            <Row>
-                <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
-                    <Card.Body>
-                        <Card.Title>Job Title</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title
-                            and make up the bulk of the card's content.
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src={audioWave}/>
-                    <Card.Body>
-                        <Card.Title>Audio Engineer</Card.Title>
-                        <Card.Text>
-                            I will edit your podcast
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
-                    <Card.Body>
-                        <Card.Title>Job Title</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title
-                            and make up the bulk of the card's content.
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-            </Row>
-        </Container>
+            <Card style={{ width: '18rem' }}>
+  <Card.Img variant="top" src={audioWave} />
+  <Card.Body>
+    <Card.Title>Service Name</Card.Title>
+    <Card.Text>
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </Card.Text>
+  </Card.Body>
+  <Card.Body>
+  <div>
+  <Button as="input" type="button" value="Edit" />{' '}
+  <Button as="input" type="button" value="Delete" id='redButton' />{' '}
+  </div>
+  </Card.Body>
+    </Card>
+    </Row>
+    </Container>
     );
 }
