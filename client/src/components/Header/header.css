@@ -1,0 +1,5 @@
+.nav-effect:hover {
+  background-color: red;
+  opacity: 1;
+  text-decoration: underline;
+}

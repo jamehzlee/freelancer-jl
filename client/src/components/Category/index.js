@@ -1,6 +1,5 @@
 import React from "react";
-import JobCard from "../JobCard";
-import "./index.css";
+import "./category.css";
 
 export default function Category() {
   return (

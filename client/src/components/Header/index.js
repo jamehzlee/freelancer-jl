@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
+        <div className=" nav-effect container-fluid">
           <Link className="navbar-brand" to="/">
             Freelancer
           </Link>

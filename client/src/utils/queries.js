@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_CATERGORIES = gql`
   query categories 
@@ -31,7 +31,7 @@ export const QUERY_SINGLE_JOB = gql`
     }
   }
 `;
-  
+
 export const QUERY_ALL_JOBS = gql`
   query Jobs($category: ID, $name: String)
   {
