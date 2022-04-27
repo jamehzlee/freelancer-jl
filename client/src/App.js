@@ -7,11 +7,12 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import SignUp from "./pages/Signup/SignUp";
 import Login from "./pages/Login/Login";
-import Job from "./pages/Job";
-import Listing from "./components/Listing"
+import Job from "./pages/Job/Job";
+import Listing from "./components/Listing";
+import Footer from "./components/Footer";
 
 const httpLink = createHttpLink({
   uri: "/graphql",

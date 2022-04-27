@@ -3,10 +3,10 @@ import Category from "../Category";
 import JobCard from "../JobCard";
 
 export default function Listing() {
-  const displayCard = () => {
-    for (let i = 0; i < 5; i++)
-    return <JobCard />
-  } 
+  const displayCard = [];
+  for (let i = 0; i < 0; i++) {
+    displayCard.push(<JobCard key={i} />);
+  }
   return (
     <div>
       <Category />
