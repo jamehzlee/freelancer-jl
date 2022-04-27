@@ -10,8 +10,8 @@ export default function Header() {
 
   return (
     <header>
-      <nav className="navbar navbar-expand-lg navbar-light bg-secondary">
-        <div className="container-fluid">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className=" nav-effect container-fluid">
           <Link className="navbar-brand" to="/">
             Freelancer
           </Link>
