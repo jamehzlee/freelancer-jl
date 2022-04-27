@@ -1,13 +1,9 @@
 import "./index.css";
 import React, { useState } from "react";
-import { QUERY_USER } from '../../utils/queries'
-import { useQuery } from "@apollo/client";
 import { Form, Button, Col } from 'react-bootstrap'
 
-export default function Login() {
+export default function Signup() {
   const [valid, setValid] = useState(false);
-  const [email, setEmail] = useState('')
-  const {user, data } = useQuery(QUERY_USER);
   
   const handleSubmit = (e) => {
     const form = e.currentTarget;
@@ -19,10 +15,30 @@ export default function Login() {
   };
 
   return (
-    <Col lg={4} md={6} sm={9}>
+     <Col lg={4} md={6} sm={9}>
         <Form noValidate validated={valid} onSubmit={handleSubmit}>
             <Form.Group className="mb-4">
-              <Form.Label hidden='true'>Email Address</Form.Label>
+              <Form.Label hidden={true}>First Name</Form.Label>
+              <Form.Control 
+                required
+                type="text"
+                placeholder="First Name"
+                className=""/>
+              <Form.Control.Feedback type="invalid">Please enter a first name.</Form.Control.Feedback>
+            </Form.Group>
+
+            <Form.Group className="mb-4">
+              <Form.Label hidden={true}>Last Name</Form.Label>
+              <Form.Control 
+                required
+                type="text"
+                placeholder="Last Name"
+                className=""/>
+              <Form.Control.Feedback type="invalid">Please enter a last name.</Form.Control.Feedback>
+            </Form.Group>
+
+            <Form.Group className="mb-4">
+              <Form.Label hidden={true}>Email Address</Form.Label>
               <Form.Control 
                 required
                 type="email"
@@ -32,7 +48,7 @@ export default function Login() {
             </Form.Group>
 
             <Form.Group className="mb-4">
-              <Form.Label hidden='true'>Password</Form.Label>
+              <Form.Label hidden={true}>Password</Form.Label>
               <Form.Control 
                 required
                 type="password"
