@@ -23,7 +23,7 @@ export default function Listing() {
     displayCard.push(<JobCard key={i} />);
   }
   return (
-    <div>
+    <div className="content">
       <Category />
       <div className="row justify-content-center">
         {displayCard}
