@@ -12,6 +12,7 @@ export default function Profile() {
     return (
         <Container>
             <Row>
+                
             <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src={audioWave} />
   <Card.Body>
@@ -31,4 +32,5 @@ export default function Profile() {
     </Row>
     </Container>
     );
+    
 }

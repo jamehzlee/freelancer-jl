@@ -14,7 +14,7 @@ const Footer = () => {
           </button>
         )} */}
         <h4>
-          Made with{" "}
+          {/* Made with{" "}
           <span
             className="emoji"
             role="img"
@@ -22,8 +22,8 @@ const Footer = () => {
             aria-hidden="false"
           >
             ❤️
-          </span>{" "}
-          by Sami, James & Andreas.
+          </span>{" "} */}
+          Brought to you by Sami, James & Andreas.
         </h4>
       </div>
     </footer>

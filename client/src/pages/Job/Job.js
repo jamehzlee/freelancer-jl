@@ -1,8 +1,35 @@
-import React from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { React } from "react";
+import { Container, Row, Col, Card, Button} from "react-bootstrap";
+import "./job.css"
+import audioWave from "../../assets/audioWave.jpeg"
 import JobCard from "../../components/JobCard";
 
+
 export default function Job() {
-  return <JobCard />;
+  // return <JobCard />;
+return (
+  <Container>
+      <Row>
+          
+      <Card style={{ width: '20rem' }}>
+<Card.Img variant="top" src={audioWave} />
+<Card.Body>
+<Card.Title>Service Name</Card.Title>
+<Card.Text>
+Some quick example text to build on the card title and make up the bulk of
+the card's content.
+</Card.Text>
+</Card.Body>
+<Card.Body>
+{/* <div>
+<Button as="input" type="button" value="Edit" />{' '}
+<Button as="input" type="button" value="Delete" id='redButton' />{' '}
+</div> */}
+</Card.Body>
+</Card>
+</Row>
+</Container>
+);
+
   
 }
