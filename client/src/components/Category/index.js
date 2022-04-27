@@ -1,5 +1,4 @@
 import React from "react";
-import JobCard from "../JobCard";
 import "./category.css";
 
 export default function Category() {

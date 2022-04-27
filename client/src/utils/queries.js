@@ -1,15 +1,19 @@
 import { gql } from "@apollo/client";
 
 export const QUERY_CATERGORIES = gql`
-  query categories {
-      _id
-      name
-    }
+  query categories 
+  {
+    _id
+    name
+   }
+  
 `;
 
 export const QUERY_SINGLE_JOB = gql`
-  query Jobs($jobId: ID!) {
-    job(jobID: $jobId) {
+  query Jobs($jobId: ID!) 
+  {
+    job(jobID: $jobId) 
+    {
       _id
       name
       description
@@ -29,8 +33,10 @@ export const QUERY_SINGLE_JOB = gql`
 `;
 
 export const QUERY_ALL_JOBS = gql`
-  query Jobs($category: ID, $name: String) {
-    jobs(category: $category, name: $name) {
+  query Jobs($category: ID, $name: String)
+  {
+    jobs(category: $category, name: $name)
+    {
       _id
       name
       description
