@@ -1,6 +1,6 @@
+import "./index.css";
 import React, { useState } from "react";
-import JobCard from "../JobCard";
-import "./category.css";
+import JobCard from "../JobCard/JobCard";
 import { useQuery } from "@apollo/client";
 import { QUERY_CATEGORIES, QUERY_JOBS_BY_CATEGORY } from "../../utils/queries";
 

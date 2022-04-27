@@ -1,7 +1,7 @@
-import Category from "./Listing";
-import Footer from "./Footer";
-import Header from "./Header";
-import JobCard from "./JobCard";
-import Listing from "./Listing";
 
-export { Category, Footer, Header, JobCard, Listing };
+import Footer from "./Footer/Footer";
+import Header from "./Header/Header";
+import JobCard from "./JobCard/JobCard";
+import Listing from "./Listing/Listing";
+
+export { Footer, Header, JobCard, Listing };
