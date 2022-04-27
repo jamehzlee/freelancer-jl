@@ -7,7 +7,7 @@ const Footer = () => {
   // const location = useLocation();
   // const navigate = useNavigate();
   return (
-    <footer className="w-100 mt-auto bg-info p-3">
+    <div className="col-12 bg-info align-self-end py-3">
       <div className="container text-center">
         {/* {location.pathname !== "/" && (
           <button className="btn btn-dark mb-3" onClick={() => navigate(-1)}>
@@ -27,7 +27,7 @@ const Footer = () => {
           by Sami, James & Andreas.
         </h4>
       </div>
-    </footer>
+    </div>
   );
 };
 
