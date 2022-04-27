@@ -1,5 +1,5 @@
+import "./index.css";
 import React from "react";
-import "./category.css";
 
 export default function Category() {
   return (
@@ -9,19 +9,14 @@ export default function Category() {
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link text-dark" href="#">
-                  Art
-                </a>
+                <a className="nav-link text-dark">Art</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-dark" href="#">
-                  Audio
-                </a>
+                <a className="nav-link text-dark">Audio</a>
               </li>
               <li className="nav-item dropdown">
                 <a
                   className="nav-link  text-dark"
-                  href="#"
                   id="navbarDropdownMenuLink"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -33,7 +28,6 @@ export default function Category() {
               <li className="nav-item dropdown">
                 <a
                   className="nav-link  text-dark"
-                  href="#"
                   id="navbarDropdownMenuLink"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -45,7 +39,6 @@ export default function Category() {
               <li className="nav-item dropdown">
                 <a
                   className="nav-link  text-dark"
-                  href="#"
                   id="navbarDropdownMenuLink"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -58,7 +51,6 @@ export default function Category() {
           </div>
         </div>
       </nav>
-      <br/>
     </div>
   );
 }

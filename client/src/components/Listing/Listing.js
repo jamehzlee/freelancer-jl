@@ -1,7 +1,7 @@
+import "./index.css";
 import React from "react";
-import "./listing.css";
-import Category from "../Category";
-import JobCard from "../JobCard";
+import Category from "../Category/Category";
+import JobCard from "../JobCard/JobCard";
 
 export default function Listing() {
   // const [addJob, { error }] = useMutation(ADD_JOB, {
