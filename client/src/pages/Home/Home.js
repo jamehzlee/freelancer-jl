@@ -11,7 +11,8 @@ export default function Home() {
     <div>
       <div>
         <Header />
-
+      </div>
+      <div className="home-container">
         <Outlet />
       </div>
       <div>
