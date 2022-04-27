@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type Category {
@@ -33,15 +33,28 @@ const typeDefs = gql`
     jobsByCategory(category: ID): [Job]
     job(jobID: ID!): Job
     user: User
-    jobs:[Job]
-
   }
 
   type Mutation {
-    userAdd(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    userUpdate(firstName: String, lastName: String, email: String, password: String): User
+    userAdd(
+      firstName: String!
+      lastName: String!
+      email: String!
+      password: String!
+    ): Auth
+    userUpdate(
+      firstName: String
+      lastName: String
+      email: String
+      password: String
+    ): User
     userDelete(id: ID!): User
-    jobAdd(name: String!, description: String!, price: Float!, category: ID!): Job
+    jobAdd(
+      name: String!
+      description: String!
+      price: Float!
+      category: ID!
+    ): Job
     jobUpdate(id: ID!, name: String, description: String, price: Float): Job
     jobDelete(id: ID!): Job
     login(email: String!, password: String!): Auth

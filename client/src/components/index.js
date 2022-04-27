@@ -1,4 +1,4 @@
-import Category from "./Category";
+import Category from "./Listing";
 import Footer from "./Footer";
 import Header from "./Header";
 import JobCard from "./JobCard";

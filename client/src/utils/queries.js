@@ -1,37 +1,17 @@
 import { gql } from "@apollo/client";
 
-export const QUERY_CATERGORIES = gql`
-  query categories {
+export const QUERY_CATEGORIES = gql`
+query  {
+  categories {
     _id
     name
-  }
-`;
-
-export const QUERY_SINGLE_JOB = gql`
-query Job($jobId: ID!) {
-  job(jobID: $jobId) {
-    _id
-    name
-    description
-    price
-    category {
-      _id
-      name
-    }
-    user {
-      _id
-      firstName
-      lastName
-      email
-      password
-    }
   }
 }
 `;
 
-export const QUERY_JOBS = gql`
-  query Jobs {
-    jobs {
+export const QUERY_SINGLE_JOB = gql`
+  query Job($jobId: ID!) {
+    job(jobID: $jobId) {
       _id
       name
       description

@@ -10,28 +10,22 @@ const resolvers = {
     },
 
     job: async (parent, { jobID }, context) => {
-      const job = await Job.findById(jobID).populate("category").populate("user");
+      const job = await Job.findById(jobID)
+        .populate("category")
+        .populate("user");
 
       return job;
     },
-    jobs: async () => {
-      return await Job.find().populate("category").populate("user");
-    },
 
-    jobsByCategory: async (parent, { category, name }) => {
-      const params = {};
-
+    jobsByCategory: async (parent, { category }) => {
+      
       if (category) {
-        params.category = category;
+        return await Job.find({category}).populate("category").populate("user");
+   
+      }else {
+        return await Job.find().populate("category").populate("user");
       }
 
-      if (name) {
-        params.name = {
-          $regex: name,
-        };
-      }
-
-      return await Job.find(params).populate("category").populate("user");
     },
 
     user: async (parent, args, context) => {
