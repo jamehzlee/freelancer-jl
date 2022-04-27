@@ -20,6 +20,7 @@ export default function Listing() {
     useQuery(QUERY_CATEGORIES);
   const categories = categoriesData?.categories || [];
   return (
+
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-info">
         <div className="container-fluid">
