@@ -1,19 +1,17 @@
 import { gql } from "@apollo/client";
 
-export const QUERY_CATERGORIES = gql`
-  query categories 
-  {
+export const QUERY_CATEGORIES = gql`
+query  {
+  categories {
     _id
     name
-   }
-  
+  }
+}
 `;
 
 export const QUERY_SINGLE_JOB = gql`
-  query Jobs($jobId: ID!) 
-  {
-    job(jobID: $jobId) 
-    {
+  query Job($jobId: ID!) {
+    job(jobID: $jobId) {
       _id
       name
       description
@@ -27,29 +25,29 @@ export const QUERY_SINGLE_JOB = gql`
         firstName
         lastName
         email
+        password
       }
     }
   }
 `;
 
-export const QUERY_ALL_JOBS = gql`
-  query Jobs($category: ID, $name: String)
-  {
-    jobs(category: $category, name: $name)
-    {
+export const QUERY_JOBS_BY_CATEGORY = gql`
+  query JobsByCategory($category: ID) {
+    jobsByCategory(category: $category) {
       _id
-      name
       description
       price
+      name
       category {
-        _id
         name
+        _id
       }
       user {
         _id
         firstName
         lastName
         email
+        password
       }
     }
   }
