@@ -1,8 +1,8 @@
 import { React } from "react";
 import { Container, Row, Col, Card, Button} from "react-bootstrap";
-import "./job.css"
 import audioWave from "../../assets/audioWave.jpeg"
-import JobCard from "../../components/JobCard";
+import './index.css'
+// import { JobCard } from "../../components";
 
 
 export default function Job() {

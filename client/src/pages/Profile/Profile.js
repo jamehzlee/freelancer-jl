@@ -1,7 +1,8 @@
+import "./index.css";
 import { React, useState } from "react";
-import { Container, Row, Col, Card, Button, ListGroup, ListGroupItem } from "react-bootstrap";
-import "./profile.css";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import audioWave from "../../assets/audioWave.jpeg"
+
 export default function Profile() {
     // still needs query using apollo client to get user data
     const [userInfo, setUserInfo] = useState({
