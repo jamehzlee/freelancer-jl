@@ -46,11 +46,7 @@ export default function Login(props) {
   };
 
   return (
-<<<<<<< HEAD
-    <Col lg={4} md={6} sm={9} className="">
-=======
     <Col xxl={4} xl={5} lg={6} md={7} sm={9} xs={10} className=''>
->>>>>>> 417719a357f06870b2ea6ece7dbae767eae78efb
       {data ? (
         <p>
           Success! You may now head <Link to="/">back to the homepage.</Link>
