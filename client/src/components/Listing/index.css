@@ -1,7 +1,10 @@
-.content {
-    padding: 10px;
+.category-nav {
+    background-color: #3c526d;
+    color: aliceblue;
 }
 
-.content a {
-    padding: 10px
+.card-col .card-body{
+    min-width: 200px;
+    height: 200px;
+    padding: 10px;
 }

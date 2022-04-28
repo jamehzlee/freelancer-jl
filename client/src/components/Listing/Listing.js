@@ -22,9 +22,9 @@ export default function Listing() {
   return (
 
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-info">
+      <nav className="navbar navbar-expand-lg navbar-light category-nav">
         <div className="container-fluid">
-          <div className="collapse navbar-collapse" id="navbarNa">
+          <div className="">
             <ul className="navbar-nav">
               {loadingCategories
                 ? ""
@@ -45,18 +45,19 @@ export default function Listing() {
           </div>
         </div>
       </nav>
-      <br />
-      <div>
+
+      <div className="row justify-content-center">
         {loadingJobs
           ? "Hello"
           : jobs.map((job) => {
-              return (
-                <div className="row justify-content-center" key={job._id}>
+            return (
+              <div className="col card-col" key={job._id}>
                   <JobCard job={job} />
                 </div>
               );
             })}
       </div>
+
     </div>
   );
 }
