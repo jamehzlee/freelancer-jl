@@ -18,10 +18,10 @@ db.once('open', async () => {
   await User.deleteMany();
   const users = await User.create([
     { 
-      firstName: 'Test',
-      lastName: `Lastname`,
-      email: `Test@email.com`,
-      password: `test123`},
+      firstName: 'First',
+      lastName: `Last`,
+      email: `test@email.com`,
+      password: `qweqweqwe`},
   ]);
   console.log('users seeded');
   await Job.deleteMany();
@@ -30,7 +30,7 @@ db.once('open', async () => {
     {
       name: 'Build a Website',
       description:
-        'I will build you a website using standard coding languages',
+        'I will build you a website using standard coding languages.',
       category: categories[0]._id,
       price: 499.99,
       user: users[0]
@@ -70,7 +70,7 @@ db.once('open', async () => {
     {
       name: 'Podcast Editing',
       description:
-        'I will edit your podcast episodes. Clean up your recordings while also making the finished product sound industry standard',
+        'I will edit your podcast episodes. Clean up your recordings while also making the finished product sound industry standard!',
       category: categories[1]._id,
       price: 199.99,
       user: users[0]
@@ -86,7 +86,7 @@ db.once('open', async () => {
     {
       name: 'Master Your Song',
       description:
-        'I will master your audio files and have your finshed song file sounding radio radio',
+        'I will master your audio files and have your finshed song file sounding radio.',
       category: categories[1]._id,
       price: 199.99,
       user: users[0]
@@ -94,7 +94,7 @@ db.once('open', async () => {
     {
       name: 'Produce a Song',
       description:
-        'I will create a song to your specifications. Have music to call your own!',
+        'I will create a song to your specifications, Have music to call your own!',
       category: categories[1]._id,
       price: 999.99,
       user: users[0]

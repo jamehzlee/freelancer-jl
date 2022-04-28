@@ -24,12 +24,12 @@ export default function Login(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.currentTarget;
-    if (form.checkValidity() === false) {
-      e.preventDefault();
+    if (form.checkValidity() === true) {
       try {
         const { data } = await login({
           variables: { ...formState },
         });
+
 
         Auth.login(data.login.token);
       } catch (e) {
