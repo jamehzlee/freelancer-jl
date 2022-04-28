@@ -1,7 +1,7 @@
-.category-nav {
-    background-color: #3c526d;
-    color: aliceblue;
-}
+/* .nav-link:hover {
+text-decoration: underline;
+cursor: grab;
+} */
 
 .card-col .card-body{
     min-width: 200px;
