@@ -18,10 +18,10 @@ db.once('open', async () => {
   await User.deleteMany();
   const users = await User.create([
     { 
-      firstName: 'Test',
-      lastName: `Lastname`,
-      email: `Test@email.com`,
-      password: `test123`},
+      firstName: 'First',
+      lastName: `Last`,
+      email: `test@email.com`,
+      password: `qweqweqwe`},
   ]);
   console.log('users seeded');
   await Job.deleteMany();
