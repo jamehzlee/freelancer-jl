@@ -1,7 +1,6 @@
-
-import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
-import JobCard from "./JobCard/JobCard";
+import Footer from "./Footer/Footer";
 import Listing from "./Listing/Listing";
+import JobCard from "./JobCard/JobCard";
 
-export { Footer, Header, JobCard, Listing };
+export { Header, Footer, Listing, JobCard };
