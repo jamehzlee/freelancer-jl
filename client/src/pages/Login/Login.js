@@ -22,6 +22,7 @@ export default function Login(props) {
   };
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     const form = e.currentTarget;
     if (form.checkValidity() === false) {
       e.preventDefault();
