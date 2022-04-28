@@ -10,8 +10,27 @@
     text-align: center;
 }
 
+#profile {
+    margin: 20px;
+}
+
 #profile .card {
     background-color: var(--quinary);
+    margin: 30px;
+    max-height: 400px;
+    min-height: 250px;
+    max-width: 300px;
+    min-width: 250px;
+}
+
+#profile .card-body {
+    padding: 0;
+    margin: 10px;
+}
+
+#profile img {
+    align-self: center;
+    margin: 10px;
 }
 
 #profile .card-title {
