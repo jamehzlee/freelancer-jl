@@ -1,11 +1,9 @@
 import { React } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import audioWave from "../../assets/audioWave.jpeg";
-import "./index.css";
-// import { JobCard } from "../../components";
+import "./job.css";
 
 export default function Job() {
-  // return <JobCard />;
   return (
     <Container>
       <Row>
@@ -18,12 +16,7 @@ export default function Job() {
               bulk of the card's content.
             </Card.Text>
           </Card.Body>
-          <Card.Body>
-            {/* <div>
-            <Button as="input" type="button" value="Edit" />{' '}
-            <Button as="input" type="button" value="Delete" id='redButton' />{' '}
-            </div> */}
-          </Card.Body>
+          <Card.Body></Card.Body>
         </Card>
       </Row>
     </Container>
