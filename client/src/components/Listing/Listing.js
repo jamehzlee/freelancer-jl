@@ -22,7 +22,7 @@ export default function Listing() {
   return (
 
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light category-nav">
+      <nav className="navbar navbar-expand-lg navbar-light bg-warning category-nav">
         <div className="container-fluid">
           <div className="">
             <ul className="navbar-nav">
