@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import JobCard from "../JobCard/JobCard";
 import { useQuery } from "@apollo/client";
 import { QUERY_CATEGORIES, QUERY_JOBS_BY_CATEGORY } from "../../utils/queries";
+import { Link } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
 
 export default function Listing() {
   const [filter, setFilter] = useState("");
@@ -46,6 +48,9 @@ export default function Listing() {
         </button>
         <div className="collapse navbar-collapse" id="responsive-navbar">
           <ul className="navbar-nav">
+            <Nav.Link as = {Link} to="/">
+              All
+            </Nav.Link>
             {loadingCategories
               ? ""
               : categories.map((category) => {
