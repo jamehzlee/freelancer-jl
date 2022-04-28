@@ -11,7 +11,7 @@ export default function Header() {
   // };
 
   return (
-    <Navbar collapseOnSelect expand="lg"  variant="dark" className='align-self-start main-nav'>
+    <Navbar collapseOnSelect expand="lg"  variant="dark" id='main-nav' className='align-self-start'>
       <Container className=' justify-content-between'>
       <Navbar.Brand as={Link} to="/" className='col' >Freelancer</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
