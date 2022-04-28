@@ -10,6 +10,7 @@
 .main-nav .navbar-brand {
     max-width: 200px;
     margin: 0;
+    padding-left: 20px;
 }
 
 .main-nav .navbar-collapse {
@@ -27,4 +28,3 @@
 .header-nav .nav-link {
     max-width: 200px;
 }
-
