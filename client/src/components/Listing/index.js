@@ -32,6 +32,8 @@ export default function Listing() {
   const { loading: loadingCategories, data: categoriesData } =
     useQuery(QUERY_CATEGORIES);
   const categories = categoriesData?.categories || [];
+
+
   return (
     <div className="listing-content">
       <nav className="navbar navbar-expand-lg navbar-light category-nav">
@@ -48,8 +50,8 @@ export default function Listing() {
         </button>
         <div className="collapse navbar-collapse" id="responsive-navbar">
           <ul className="navbar-nav">
-            <Nav.Link as = {Link} to="/">
-              All
+            <Nav.Link as={Link} to="/">
+              <h3 onClick={filterJobs} className="text-dark">All</h3>
             </Nav.Link>
             {loadingCategories
               ? ""

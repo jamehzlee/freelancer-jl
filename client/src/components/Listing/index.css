@@ -12,6 +12,7 @@
 .nav-link:hover {
     cursor: pointer;
     text-decoration: underline;
+    
 }
 
 .category-nav li{
