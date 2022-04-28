@@ -8,15 +8,14 @@ export default function Listing() {
   const [filter, setFilter] = useState("");
   function filterJobs(e) {
     const selected = e.currentTarget.dataset.category;
-    // console.log(selected);
     setFilter(selected);
   }
   let jobs;
   let categoryId;
   if (filter === "") {
-    categoryId = ""
+    categoryId = "";
   } else {
-    categoryId = filter
+    categoryId = filter;
   }
   const { loading: loadingJobs, data: jobsData } = useQuery(
     QUERY_JOBS_BY_CATEGORY,
@@ -27,8 +26,6 @@ export default function Listing() {
     }
   );
   jobs = jobsData?.jobsByCategory || [];
-  
-  // const jobs = jobsData?.jobsByCategory || [];
 
   const { loading: loadingCategories, data: categoriesData } =
     useQuery(QUERY_CATEGORIES);
