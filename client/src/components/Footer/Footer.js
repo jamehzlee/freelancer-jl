@@ -7,7 +7,7 @@ const Footer = () => {
   // const location = useLocation();
   // const navigate = useNavigate();
   return (
-    <div className="col-12 bg-info align-self-end py-3">
+    <div className="col-12 align-self-end py-3 footer">
       <div className="container text-center">
         {/* {location.pathname !== "/" && (
           <button className="btn btn-dark mb-3" onClick={() => navigate(-1)}>

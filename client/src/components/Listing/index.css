@@ -1,10 +1,25 @@
 .category-nav {
-    background-color: #3c526d;
+    background-color: #9A8C98;
     color: aliceblue;
+    padding: 10px;
+    margin: 10px;
+}
+
+.category-nav li{
+    align-self: flex-start;
+}
+
+.card-row {
+    padding: 30px;
+}
+
+.card-row .card-col {
+    max-width: 250px;
+    max-height: 250px;
+    margin: 10px;
 }
 
 .card-col .card-body{
     min-width: 200px;
     height: 200px;
-    padding: 10px;
 }
