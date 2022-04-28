@@ -10,25 +10,24 @@ query  {
 `;
 
 export const QUERY_SINGLE_JOB = gql`
-  query Job($jobId: ID!) {
-    job(jobID: $jobId) {
+query Job($jobId: ID!) {
+  job(jobId: $jobId) {
+    _id
+    name
+    description
+    price
+    category {
       _id
       name
-      description
-      price
-      category {
-        _id
-        name
-      }
-      user {
-        _id
-        firstName
-        lastName
-        email
-        password
-      }
+    }
+    user {
+      _id
+      firstName
+      lastName
+      email
     }
   }
+}
 `;
 
 export const QUERY_JOBS_BY_CATEGORY = gql`

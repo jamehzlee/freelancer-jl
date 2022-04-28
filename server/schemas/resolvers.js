@@ -9,8 +9,8 @@ const resolvers = {
       return await Category.find();
     },
 
-    job: async (parent, { jobID }, context) => {
-      const job = await Job.findById(jobID)
+    job: async (parent, { jobId }, context) => {
+      const job = await Job.findById(jobId)
         .populate("category")
         .populate("user");
 
