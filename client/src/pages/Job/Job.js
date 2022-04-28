@@ -19,10 +19,9 @@ export default function Job() {
             </Card.Text>
           </Card.Body>
           <Card.Body>
-            {/* <div>
-            <Button as="input" type="button" value="Edit" />{' '}
-            <Button as="input" type="button" value="Delete" id='redButton' />{' '}
-            </div> */}
+            <div className="row justify-content-center">
+            <Button className="col-4 bg-success" as="input" type="button" value="Hire Me" />{' '}
+            </div>
           </Card.Body>
         </Card>
       </Row>
