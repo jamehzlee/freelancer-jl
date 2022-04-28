@@ -1,12 +1,12 @@
 import { gql } from "@apollo/client";
 
 export const QUERY_CATEGORIES = gql`
-query  {
-  categories {
-    _id
-    name
+  query {
+    categories {
+      _id
+      name
+    }
   }
-}
 `;
 
 export const QUERY_SINGLE_JOB = gql`
