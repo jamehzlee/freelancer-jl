@@ -37,7 +37,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}>
             <Route path="/" element={<Listing />} />
-            <Route path="job" element={<Job />} />
+            <Route path="job/:jobId" element={<Job />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
             <Route path="profile" element={<Profile />} /> 
