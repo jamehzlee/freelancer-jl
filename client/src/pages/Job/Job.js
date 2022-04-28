@@ -7,9 +7,9 @@ import "./index.css";
 export default function Job() {
   // return <JobCard />;
   return (
-    <Container>
-      <Row>
-        <Card style={{ width: "20rem" }}>
+    <Container id="job">
+      <Row className=' justify-content-center'>
+        <Card className="col" >
           <Card.Img variant="top" src={audioWave} />
           <Card.Body>
             <Card.Title>Service Name</Card.Title>
@@ -20,7 +20,7 @@ export default function Job() {
           </Card.Body>
           <Card.Body>
             <div className="row justify-content-center">
-            <Button className="col-4 bg-success" as="input" type="button" value="Hire Me" />{' '}
+            <Button className="col-4 bg-success" as="input" type="button" value="Hire Me" id="hireButton"/>{' '}
             </div>
           </Card.Body>
         </Card>
