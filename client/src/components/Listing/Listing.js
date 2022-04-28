@@ -8,7 +8,7 @@ export default function Listing() {
   const [filter, setFilter] = useState("");
   function filterJobs(e) {
     const selected = e.currentTarget.dataset.category;
-    console.log(selected);
+    // console.log(selected);
     setFilter(selected);
   }
   const { loading: loadingJobs, data: jobsData } = useQuery(
@@ -32,7 +32,7 @@ export default function Listing() {
                 ? ""
                 : categories.map((category) => {
                     return (
-                      <li className="nav-item">
+                      <li className="nav-item" key={category._id}>
                         <h3
                           onClick={filterJobs}
                           data-category={category._id}
