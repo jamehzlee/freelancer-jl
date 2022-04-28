@@ -1,5 +1,9 @@
+.listing-content {
+    padding-top: 20px;
+}
+
 .category-nav {
-    background-color: #9A8C98;
+    background-color: var(--quarternary);
     color: aliceblue;
     padding: 10px;
     margin: 10px;
