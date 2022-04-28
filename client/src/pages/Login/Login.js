@@ -6,10 +6,10 @@ import { LOGIN } from '../../utils/mutations'
 import Auth from '../../utils/auth'
 import { Form, Button, Col } from 'react-bootstrap'
 
-export default function Login() {
+export default function Login(props) {
+  const [valid, setValid] = useState(false);
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN);
-  const [valid, setValid] = useState(false);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -25,7 +25,6 @@ export default function Login() {
     const form = e.currentTarget;
     if (form.checkValidity() === false) {
       e.preventDefault();
-      console.log(formState);
       try {
         const { data } = await login({
           variables: { ...formState },
@@ -45,19 +44,20 @@ export default function Login() {
   };
 
   return (
-    <Col lg={4} md={6} sm={9}>
+    <Col lg={4} md={6} sm={9} className=''>
       {data ? (
         <p>
           Success! You may now head{' '}
           <Link to="/">back to the homepage.</Link>
         </p>
       ) : (
-        <Form noValidate validated={valid} onSubmit={handleSubmit}>
+        <Form noValidate validated={valid} onSubmit={handleSubmit} className=''>
             <Form.Group className="mb-4">
               <Form.Label hidden={true}>Email Address</Form.Label>
               <Form.Control 
                 required
                 type="email"
+                name="email"
                 placeholder="Email Address"
                 value={formState.email}
                 onChange={handleChange}
@@ -70,6 +70,7 @@ export default function Login() {
               <Form.Control 
                 required
                 type="password"
+                name="password"
                 placeholder="Password"
                 value={formState.password}
                 onChange={handleChange}
@@ -80,12 +81,6 @@ export default function Login() {
               Log In
             </Button>
         </Form>
-      )}
-
-      {error && (
-        <div className="my-3 p-3 bg-danger text-white">
-          {error.message}
-        </div>
       )}
     </Col>
   );
