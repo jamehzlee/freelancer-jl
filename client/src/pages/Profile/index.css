@@ -13,3 +13,7 @@ div {
 #redButton {
     background-color: red;
 }
+
+#profile .btn {
+    min-width: 70px;
+}
