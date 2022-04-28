@@ -9,7 +9,8 @@ export default function Job() {
     const { jobId } = useParams();
     const { loading, data } = useQuery(QUERY_SINGLE_JOB, {
         variables: {
-            jobId}
+            jobId,
+        },
     });
     const job = data?.job || [];
     console.log(job);
@@ -20,13 +21,12 @@ export default function Job() {
                     <Card.Img variant="top" src={audioWave} />
                     <Card.Body>
                         <Card.Title>{job.name}</Card.Title>
-                        <Card.Text>
-                           {job.description}
+                        <Card.Text>{job.description}</Card.Text>
+                        <Card.Text className="row justify-content-center">
+                            ${job.price}
                         </Card.Text>
-                        <Card.Text>
-                            <div className="row justify-content-center">
-                           ${job.price}
-                           </div>
+                        <Card.Text className="row justify-content-center">
+                            {/* {job.user.firstName} */}
                         </Card.Text>
                     </Card.Body>
                     <Card.Body>
