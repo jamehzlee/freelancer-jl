@@ -47,7 +47,7 @@ export default function Signup(props) {
   };
 
   return (
-     <Col lg={4} md={6} sm={9}>
+     <Col xxl={4} xl={5} lg={6} md={7} sm={9} xs={10}>
         {data ? (
           <p>
             Success! You may now head{' '}

@@ -21,10 +21,12 @@ export default function Listing() {
   const categories = categoriesData?.categories || [];
   return (
 
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-warning category-nav">
-        <div className="container-fluid">
-          <div className="">
+    <div className="listing-content">
+      <nav className="navbar navbar-expand-lg navbar-light category-nav">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#responsive-navbar" aria-controls="responsive-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="responsive-navbar">
             <ul className="navbar-nav">
               {loadingCategories
                 ? ""
@@ -43,10 +45,9 @@ export default function Listing() {
                   })}
             </ul>
           </div>
-        </div>
       </nav>
 
-      <div className="row justify-content-center">
+      <div className="row card-row justify-content-center">
         {loadingJobs
           ? ""
           : jobs.map((job) => {
