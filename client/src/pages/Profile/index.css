@@ -1,17 +1,21 @@
-h1 {
+#profile h1 {
     text-align: center;
 }
 
-P {
+#profile p {
     text-align: center;
 }
 
-div {
+#profile div {
     text-align: center;
 }
 
-#redButton {
-    background-color: red;
+#profile .card {
+    background-color: var(--quinary);
+}
+
+#profile .card-title {
+    color: rgba(255,255,255,.65);
 }
 
 #profile .btn {

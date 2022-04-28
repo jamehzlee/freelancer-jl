@@ -26,7 +26,7 @@ export default function Profile() {
           <Card.Body>
           <div className="row justify-content-between">
           <Button className="col-4" as="input" type="button" value="Edit" />{' '}
-          <Button className="col-4" as="input" type="button" value="Delete" id='redButton' />{' '}
+          <Button className="col-4 bg-danger" as="input" type="button" value="Delete"/>{' '}
           </div>
           </Card.Body>
         </Card>
