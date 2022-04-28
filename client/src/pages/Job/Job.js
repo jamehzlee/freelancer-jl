@@ -23,6 +23,11 @@ export default function Job() {
                         <Card.Text>
                            {job.description}
                         </Card.Text>
+                        <Card.Text>
+                            <div className="row justify-content-center">
+                           ${job.price}
+                           </div>
+                        </Card.Text>
                     </Card.Body>
                     <Card.Body>
                         <div className="row justify-content-center">
