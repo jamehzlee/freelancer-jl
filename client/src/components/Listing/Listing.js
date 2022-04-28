@@ -48,7 +48,7 @@ export default function Listing() {
       <br />
       <div>
         {loadingJobs
-          ? "Hello"
+          ? ""
           : jobs.map((job) => {
               return (
                 <div className="row justify-content-center" key={job._id}>

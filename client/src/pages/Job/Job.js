@@ -1,7 +1,7 @@
 import { React } from "react";
 import { Container, Row, Col, Card, Button} from "react-bootstrap";
 import audioWave from "../../assets/audioWave.jpeg"
-import './index.css'
+import './job.css'
 
 
 export default function Job() {
