@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import audioWave from "../../assets/audioWave.jpeg";
 import "./index.css";
-import { QUERY_CATEGORIES, QUERY_SINGLE_JOB } from "../../utils/queries";
+import { QUERY_SINGLE_JOB } from "../../utils/queries";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 export default function Job() {
@@ -21,8 +21,7 @@ export default function Job() {
                     <Card.Body>
                         <Card.Title>{job.name}</Card.Title>
                         <Card.Text>
-                            Some quick example text to build on the card title
-                            and make up the bulk of the card's content.
+                           {job.description}
                         </Card.Text>
                     </Card.Body>
                     <Card.Body>
