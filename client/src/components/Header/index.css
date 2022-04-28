@@ -1,0 +1,30 @@
+.main-nav {
+    background-color: #4A4E69;
+}
+
+.main-nav .container {
+    min-width: 100%;
+    padding: 0;
+}
+
+.main-nav .navbar-brand {
+    max-width: 200px;
+    margin: 0;
+}
+
+.main-nav .navbar-collapse {
+    margin: 0;
+    justify-content: flex-end;
+}
+
+.main-nav a {
+    align-self: flex-end;
+    color: white;
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.header-nav .nav-link {
+    max-width: 200px;
+}
+

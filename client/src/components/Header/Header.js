@@ -11,12 +11,12 @@ export default function Header() {
   // };
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='col-12 align-self-start'>
-      <Container>
-      <Navbar.Brand href="/">Freelancer</Navbar.Brand>
+    <Navbar collapseOnSelect expand="lg"  variant="dark" className='align-self-start main-nav'>
+      <Container className=' justify-content-between'>
+      <Navbar.Brand as={Link} to="/" className='col' >Freelancer</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="">
+      <Navbar.Collapse className='col' id="responsive-navbar-nav">
+        <Nav className="header-nav">
           <Nav.Link as={Link} to="/">Home</Nav.Link>
           <Nav.Link as={Link} to="/login">Login</Nav.Link>
           <Nav.Link as={Link} to="/signup">Signup</Nav.Link>
