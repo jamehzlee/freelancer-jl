@@ -1,11 +1,9 @@
 import { React } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import audioWave from "../../assets/audioWave.jpeg";
-import "./index.css";
-// import { JobCard } from "../../components";
+import "./job.css";
 
 export default function Job() {
-  // return <JobCard />;
   return (
     <Container id="job">
       <Row className=' justify-content-center'>
@@ -23,6 +21,7 @@ export default function Job() {
             <Button className="col-4 bg-success" as="input" type="button" value="Hire Me" id="hireButton"/>{' '}
             </div>
           </Card.Body>
+          
         </Card>
       </Row>
     </Container>

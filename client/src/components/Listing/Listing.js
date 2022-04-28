@@ -8,7 +8,7 @@ export default function Listing() {
   const [filter, setFilter] = useState("");
   function filterJobs(e) {
     const selected = e.currentTarget.dataset.category;
-    console.log(selected);
+    // console.log(selected);
     setFilter(selected);
   }
   const { loading: loadingJobs, data: jobsData } = useQuery(
@@ -23,8 +23,8 @@ export default function Listing() {
 
     <div className="listing-content">
       <nav className="navbar navbar-expand-lg navbar-light category-nav">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#responsive-navbar" aria-controls="responsive-navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#responsive-navbar" aria-controls="responsive-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="responsive-navbar">
             <ul className="navbar-nav">
@@ -32,7 +32,7 @@ export default function Listing() {
                 ? ""
                 : categories.map((category) => {
                     return (
-                      <li className="nav-item">
+                      <li className="nav-item" key={category._id}>
                         <h3
                           onClick={filterJobs}
                           data-category={category._id}
@@ -49,7 +49,7 @@ export default function Listing() {
 
       <div className="row card-row justify-content-center">
         {loadingJobs
-          ? "Hello"
+          ? ""
           : jobs.map((job) => {
             return (
               <div className="col card-col" key={job._id}>
