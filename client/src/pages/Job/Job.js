@@ -64,12 +64,13 @@ export default function Job() {
                             <Card.Body>
                                 <div className="row justify-content-center">
                                     <Button
+                                        href="mailto:{job.user.email}"
                                         className="col-4 bg-success"
                                         as="input"
                                         type="button"
                                         value="Hire Me"
                                         id="hireButton"
-                                    />{" "}
+                                    ></Button>
                                 </div>
                             </Card.Body>
                         </Card>
