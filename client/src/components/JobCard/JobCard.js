@@ -4,7 +4,6 @@ import "./index.css";
 import { Link } from "react-router-dom";
 
 export default function JobCard({job}) {
-  console.log(job);
   return (
     <Link className="col-3 p-2" to={`job/${job._id}`}>
       <div className="card">
@@ -17,9 +16,3 @@ export default function JobCard({job}) {
     </Link>
   );
 }
-
-// const props = {
-//   job:{
-//     name: "student"
-//   }
-// }
