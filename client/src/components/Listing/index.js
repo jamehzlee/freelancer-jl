@@ -74,12 +74,15 @@ export default function Listing() {
                     </li>
                   );
                 })}
-            <Button className="align-self-right col" id="post-button" onClick={filterJobs} to="/">
+            <Button
+              className="align-self-right col"
+              id="post-button"
+              href="/post"
+            >
               POST
             </Button>
           </ul>
-          <div className="col">
-          </div>
+          <div className="col"></div>
         </div>
       </nav>
 
