@@ -1,7 +1,14 @@
-#job .card {
-    max-width: 600px;
+#job-content {
+    margin-top: 40px;
 }
 
-#hireButton:hover {
-    
+#job .card {
+    padding: 15px;
+    max-width: 600px;
+    text-align: center;
+}
+
+#job img {
+    padding: 10px;
+    border-radius: 20px;
 }

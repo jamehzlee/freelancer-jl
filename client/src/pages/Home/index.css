@@ -1,7 +1,7 @@
-.page {
+#page {
     min-width: 100%;
 }
 
-.row-content {
+#page .row-content {
     min-height: 100vh;
 } 
