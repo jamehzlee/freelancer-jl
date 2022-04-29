@@ -41,18 +41,24 @@ export const DELETE_USER = gql`
 `
 
 export const ADD_JOB = gql`
-  mutation JobAdd($name: String!, $description: String!, $price: Float!, $category: ID!) {
-    jobAdd(name: $name, description: $description, price: $price, category: $category) {
+mutation JobAdd($name: String!, $description: String!, $price: Float!, $category: ID!) {
+  jobAdd(name: $name, description: $description, price: $price, category: $category) {
+    _id
+    name
+    description
+    price
+    category {
       _id
-      price
-      description
       name
-      category {
-        _id
-        name
-      }
+    }
+    user {
+      _id
+      firstName
+      lastName
+      email
     }
   }
+}
 `
 export const UPDATE_JOB = gql`
   mutation JobUpdate($jobUpdateId: ID!, $name: String, $description: String, $price: Float) {

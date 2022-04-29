@@ -55,8 +55,9 @@ const resolvers = {
     },
 
     jobAdd: async (parent, args, context) => {
+      console.log("jobAdd:")
       const job = await Job.create({ ...args, user: context.user._id });
-
+console.log(args, job)
       return job;
     },
 
