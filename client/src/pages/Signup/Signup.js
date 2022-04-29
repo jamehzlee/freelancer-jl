@@ -43,7 +43,6 @@ export default function Signup() {
     }
     setValid(true);
   };
-  console.log(data);
   return (
     <Col xxl={4} xl={5} lg={6} md={7} sm={9} xs={10}>
       <Form noValidate validated={valid} onSubmit={handleSubmit}>
