@@ -1,4 +1,5 @@
 import "./index.css";
+import addImage from "../../assets/add.svg"
 import React, { useState } from "react";
 import JobCard from "../JobCard/JobCard";
 import { useQuery } from "@apollo/client";
@@ -33,7 +34,6 @@ export default function Listing() {
     useQuery(QUERY_CATEGORIES);
   const categories = categoriesData?.categories || [];
 
-
   return (
     <div className="listing-content">
       <nav className="navbar navbar-expand-lg navbar-light category-nav">
@@ -51,7 +51,9 @@ export default function Listing() {
         <div className="collapse navbar-collapse" id="responsive-navbar">
           <ul className="navbar-nav">
             <Nav.Link as={Link} to="/">
-              <h3 onClick={filterJobs} className="text-dark">All</h3>
+              <h3 onClick={filterJobs} id="all-categories">
+                All
+              </h3>
             </Nav.Link>
             {loadingCategories
               ? ""
@@ -68,6 +70,11 @@ export default function Listing() {
                     </li>
                   );
                 })}
+            <Nav.Link as={Link} to="/">
+              <button onClick={filterJobs} id="post-button">
+                <img src={addImage} />
+              </button>
+            </Nav.Link>
           </ul>
         </div>
       </nav>

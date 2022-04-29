@@ -1,35 +1,46 @@
 .listing-content {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 .category-nav {
-    background-color: var(--quarternary);
-    color: aliceblue;
-    padding: 10px;
-    margin: 10px;
+  background-color: var(--quarternary);
+  color: aliceblue;
+  padding: 10px;
+  margin: 10px;
+}
+
+#all-categories {
+  color: var(--quinary);
 }
 
 .nav-link:hover {
-    cursor: pointer;
-    text-decoration: underline;
-    
+  cursor: pointer;
+  text-decoration: underline;
 }
 
-.category-nav li{
-    align-self: flex-start;
+.category-nav li {
+  align-self: flex-start;
 }
 
 .card-row {
-    padding: 30px;
+  padding: 30px;
 }
 
 .card-row .card-col {
-    max-width: 250px;
-    max-height: 250px;
-    margin: 10px;
+  max-width: 250px;
+  max-height: 250px;
+  margin: 10px;
 }
 
-.card-col .card-body{
-    min-width: 200px;
-    height: 200px;
+.card-col .card-body {
+  min-width: 200px;
+  height: 200px;
+}
+
+#post-button {
+  background-color: var(--primary);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  font-size: 24px;
 }
