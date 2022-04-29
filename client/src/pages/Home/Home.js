@@ -7,12 +7,14 @@ import Container from "react-bootstrap/Container";
 
 export default function Home() {
   return (
-    <Container className="page">
+    <Container id="page">
       <Row className="row-content justify-content-center">
         
-        <div className="align-self-start">
-          <Header />
-          <Outlet />
+        <div id="content-top" className="col align-self-start">
+          <div className="row">
+            <Header />
+            <Outlet />
+          </div>
         </div>
 
         <Footer />

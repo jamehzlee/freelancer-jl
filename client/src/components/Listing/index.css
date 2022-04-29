@@ -1,8 +1,8 @@
-.listing-content {
+#listing-area {
   padding-top: 20px;
 }
 
-.category-nav {
+#category-nav {
   background-color: var(--quarternary);
   color: aliceblue;
   padding: 10px;
@@ -13,13 +13,18 @@
   color: var(--quinary);
 }
 
-.nav-link:hover {
+#category-nav .nav-link:hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
-.category-nav li {
+#category-nav li {
   align-self: flex-start;
+}
+
+#responsive-categories .navbar-nav {
+  padding: 0;
+  max-width: 600px;
 }
 
 .card-row {
@@ -37,6 +42,6 @@
   height: 200px;
 }
 
-#post-button {
-  padding-right: 10px;
+#but-row a {
+  max-width: 70px;
 }
