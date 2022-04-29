@@ -9,9 +9,11 @@ export default function Home() {
   return (
     <Container className="page">
       <Row className="row-content justify-content-center">
-        <Header />
-
-        <Outlet />
+        
+        <div className="align-self-start">
+          <Header />
+          <Outlet />
+        </div>
 
         <Footer />
       </Row>
