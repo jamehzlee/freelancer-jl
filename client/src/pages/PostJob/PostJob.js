@@ -1,14 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, Button, Col } from "react-bootstrap";
+import { useMutation, useQuery } from "@apollo/client";
+import { QUERY_CATEGORIES } from "../../utils/queries";
+import { ADD_JOB } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 
 export default function PostJob() {
+  const [valid, setValid] = useState(false);
+  const [formState, setFormState] = useState({
+    name: "",
+    price: "",
+    description: "",
+    category: "",
+  });
+  const [addJob, { error }] = useMutation(ADD_JOB);
+  const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
+  const categories = categoryData?.categories || [];
+
+  const handleChange = (event) => {
+    let { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+
+    if (form.checkValidity() === true) {
+      try {
+        let price = parseFloat(formState.price);
+        console.log(price);
+        const job = {
+          name: formState.name,
+          description: formState.description,
+          price: price,
+          category: formState.category,
+        };
+        console.log(job);
+        const { data } = addJob({
+          variables: {
+            ...job,
+          },
+        });
+        console.log("Success!");
+      } catch (e) {
+        console.error(e);
+        console.log(e);
+      }
+    }
+    setValid(true);
+  };
   return (
     <Col xxl={4} xl={5} lg={6} md={7} sm={9} xs={10}>
-      <Form
-        noValidate
-        //   validated={valid} onSubmit={handleSubmit}
-      >
+      <Form noValidate validated={valid} onSubmit={handleSubmit}>
         <Form.Group className="mb-4">
           <Form.Label hidden={true}>Title</Form.Label>
           <Form.Control
@@ -16,9 +63,9 @@ export default function PostJob() {
             placeholder="Title"
             required
             type="text"
-            name="title"
+            name="name"
             // value={formState.title}
-            // onChange={handleChange}
+            onChange={handleChange}
           />
           <Form.Control.Feedback type="invalid">
             Please enter a title.
@@ -31,10 +78,10 @@ export default function PostJob() {
             className=""
             placeholder="$$$"
             required
-            type="text"
+            type="number"
             name="price"
-            // value={formState.price}
-            // onChange={handleChange}
+            value={formState.price}
+            onChange={handleChange}
           />
           <Form.Control.Feedback type="invalid">
             Please enter a price.
@@ -47,13 +94,38 @@ export default function PostJob() {
             className=""
             placeholder="Description"
             required
-            type="text"
-            name="text"
-            // value={formState.description}
-            // onChange={handleChange}
+            as="textarea"
+            rows={5}
+            name="description"
+            value={formState.description}
+            onChange={handleChange}
           />
           <Form.Control.Feedback type="invalid">
             Please enter a valid description.
+          </Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group className="mb-4">
+          <Form.Select
+            onChange={handleChange}
+            required
+            aria-label="Default select example"
+            name="category"
+          >
+            {!loading ? (
+              categories.map((category) => {
+                return (
+                  <option key={category._id} value={category._id}>
+                    {category.name}
+                  </option>
+                );
+              })
+            ) : (
+              <option></option>
+            )}
+          </Form.Select>
+          <Form.Control.Feedback type="invalid">
+            Please select a catgeory.
           </Form.Control.Feedback>
         </Form.Group>
 
