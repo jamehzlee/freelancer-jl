@@ -1,11 +1,12 @@
 import "./index.css";
-import addImage from "../../assets/add.svg"
+import addImage from "../../assets/add.svg";
 import React, { useState } from "react";
 import JobCard from "../JobCard/JobCard";
 import { useQuery } from "@apollo/client";
 import { QUERY_CATEGORIES, QUERY_JOBS_BY_CATEGORY } from "../../utils/queries";
 import { Link } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
+import Button from "react-bootstrap/Button";
 
 export default function Listing() {
   const [filter, setFilter] = useState("");
@@ -48,8 +49,11 @@ export default function Listing() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="responsive-navbar">
-          <ul className="navbar-nav">
+        <div
+          className="collapse navbar-collapse row justify-content-between"
+          id="responsive-navbar"
+        >
+          <ul className="navbar-nav col">
             <Nav.Link as={Link} to="/">
               <h3 onClick={filterJobs} id="all-categories">
                 All
@@ -70,12 +74,12 @@ export default function Listing() {
                     </li>
                   );
                 })}
-            <Nav.Link as={Link} to="/">
-              <button onClick={filterJobs} id="post-button">
-                <img src={addImage} />
-              </button>
-            </Nav.Link>
+            <Button className="align-self-right col" id="post-button" onClick={filterJobs} to="/">
+              POST
+            </Button>
           </ul>
+          <div className="col">
+          </div>
         </div>
       </nav>
 

@@ -38,9 +38,5 @@
 }
 
 #post-button {
-  background-color: var(--primary);
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  font-size: 24px;
+  padding-right: 10px;
 }
