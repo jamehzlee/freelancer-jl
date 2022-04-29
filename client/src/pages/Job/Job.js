@@ -62,15 +62,16 @@ export default function Job() {
                                 </Card.Text>
                             </Card.Body>
                             <Card.Body>
-                                <div className="row justify-content-center">
+                                <div className="row justify-content-center text-center">
+                                    <a href={`mailto:${job.user.email}`}>
                                     <Button
-                                        href="mailto:{job.user.email}"
-                                        className="col-4 bg-success"
+                                       className="col-4 center bg-success"
                                         as="input"
                                         type="button"
                                         value="Hire Me"
                                         id="hireButton"
                                     ></Button>
+                                    </a>
                                 </div>
                             </Card.Body>
                         </Card>
