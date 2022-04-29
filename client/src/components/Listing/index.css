@@ -1,8 +1,8 @@
-.listing-content {
+#listing-content {
   padding-top: 20px;
 }
 
-.category-nav {
+#category-nav {
   background-color: var(--quarternary);
   color: aliceblue;
   padding: 10px;
@@ -13,12 +13,12 @@
   color: var(--quinary);
 }
 
-.nav-link:hover {
+#category-nav .nav-link:hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
-.category-nav li {
+#category-nav li {
   align-self: flex-start;
 }
 
