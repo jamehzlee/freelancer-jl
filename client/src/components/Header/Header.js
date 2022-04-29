@@ -12,13 +12,7 @@ export default function Header() {
   const isLoggedIn = Auth.getToken();
 
   return (
-    <Navbar
-      collapseOnSelect
-      expand="lg"
-      variant="dark"
-      id="main-nav"
-      className="align-self-start"
-    >
+    <Navbar collapseOnSelect expand="lg" variant="dark" id="main-nav" className="col">
       <Container className=" justify-content-between">
         <Navbar.Brand as={Link} to="/" className="col">
           Freelancer
