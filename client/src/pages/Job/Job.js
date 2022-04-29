@@ -43,18 +43,21 @@ export default function Job() {
     //     }
 
     return (
-        <Container id="job">
+        <div>
+
+        {loading ? '' :
+            <Container id="job">
             <Row className=" justify-content-center">
-                <Card className="col">
-                    <Card.Img variant="top" src={socialMedia} />
+            <Card className="col">
+            {/* <Card.Img variant="top" src={selectedImg} /> */}
                     <Card.Body>
-                        <Card.Title>{job.name}</Card.Title>
-                        <Card.Text>{job.description}</Card.Text>
+                    <Card.Title>{job.name}</Card.Title>
+                    <Card.Text>{job.description}</Card.Text>
                         <Card.Text className="row justify-content-center">
                             ${job.price}
                         </Card.Text>
                         <Card.Text className="row justify-content-center">
-                            {/* {job.user.firstName} */}
+                            {job.user.firstName} {job.user.lastName}
                         </Card.Text>
                     </Card.Body>
                     <Card.Body>
@@ -65,11 +68,14 @@ export default function Job() {
                                 type="button"
                                 value="Hire Me"
                                 id="hireButton"
-                            />{" "}
+                                />{" "}
                         </div>
                     </Card.Body>
                 </Card>
             </Row>
         </Container>
-    );
+    }
+    </div>
+)
+
 }
