@@ -36,23 +36,17 @@ export default function Listing() {
   const categories = categoriesData?.categories || [];
 
   return (
-    <div className="listing-content">
-      <nav className="navbar navbar-expand-lg navbar-light category-nav">
+    <div id="listing-area">
+      <nav className="navbar navbar-expand-lg navbar-light" id="category-nav">
         <button
-          className="navbar-toggler"
+          className="navbar-toggler ms-3"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#responsive-navbar"
-          aria-controls="responsive-navbar"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          data-bs-target="#responsive-categories"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div
-          className="collapse navbar-collapse row justify-content-between"
-          id="responsive-navbar"
-        >
+        <div className="collapse navbar-collapse row justify-content-between ms-4" id="responsive-categories">
           <ul className="navbar-nav col">
             <Nav.Link as={Link} to="/">
               <h3 onClick={filterJobs} id="all-categories">
@@ -74,19 +68,14 @@ export default function Listing() {
                     </li>
                   );
                 })}
-            <Button
-              className="align-self-right col"
-              id="post-button"
-              href="/post"
-            >
-              POST
-            </Button>
           </ul>
-          <div className="col"></div>
+        </div>
+        <div id="but-row" className="row ms-auto mx-3">
+          <Button className="col" href="/post">Post</Button>
         </div>
       </nav>
 
-      <div className="row card-row justify-content-center">
+      <div id="listings" className="row card-row justify-content-center">
         {loadingJobs
           ? ""
           : jobs.map((job) => {

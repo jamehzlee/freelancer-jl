@@ -1,4 +1,4 @@
-#listing-content {
+#listing-area {
   padding-top: 20px;
 }
 
@@ -22,6 +22,11 @@
   align-self: flex-start;
 }
 
+#responsive-categories .navbar-nav {
+  padding: 0;
+  max-width: 600px;
+}
+
 .card-row {
   padding: 30px;
 }
@@ -37,6 +42,6 @@
   height: 200px;
 }
 
-#post-button {
-  padding-right: 10px;
+#but-row a {
+  max-width: 70px;
 }
