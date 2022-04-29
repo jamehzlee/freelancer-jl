@@ -1,10 +1,12 @@
 import "./index.css";
+import addImage from "../../assets/add.svg";
 import React, { useState } from "react";
 import JobCard from "../JobCard/JobCard";
 import { useQuery } from "@apollo/client";
 import { QUERY_CATEGORIES, QUERY_JOBS_BY_CATEGORY } from "../../utils/queries";
 import { Link } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
+import Button from "react-bootstrap/Button";
 
 export default function Listing() {
   const [filter, setFilter] = useState("");
@@ -32,6 +34,7 @@ export default function Listing() {
   const { loading: loadingCategories, data: categoriesData } =
     useQuery(QUERY_CATEGORIES);
   const categories = categoriesData?.categories || [];
+
   return (
     <div className="listing-content">
       <nav className="navbar navbar-expand-lg navbar-light category-nav">
@@ -46,10 +49,15 @@ export default function Listing() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="responsive-navbar">
-          <ul className="navbar-nav">
-            <Nav.Link as = {Link} to="/">
-              All
+        <div
+          className="collapse navbar-collapse row justify-content-between"
+          id="responsive-navbar"
+        >
+          <ul className="navbar-nav col">
+            <Nav.Link as={Link} to="/">
+              <h3 onClick={filterJobs} id="all-categories">
+                All
+              </h3>
             </Nav.Link>
             {loadingCategories
               ? ""
@@ -66,7 +74,15 @@ export default function Listing() {
                     </li>
                   );
                 })}
+            <Button
+              className="align-self-right col"
+              id="post-button"
+              href="/post"
+            >
+              POST
+            </Button>
           </ul>
+          <div className="col"></div>
         </div>
       </nav>
 
