@@ -1,15 +1,12 @@
 import React from "react";
-import { Container, Row, Card, Button } from "react-bootstrap";
-import audioWave from "../../assets/audioWave.jpeg";
-import art from "../../assets/art.jpeg";
-import cooking from "../../assets/cooking.jpeg";
-import socialMedia from "../../assets/socialMedia.jpeg";
-import tech from "../../assets/tech.jpeg";
-
 import "./index.css";
+import { Container, Row, Card, Button } from "react-bootstrap";
+import { audioWave, art, cooking, socialMedia, tech } from "../../assets";
+
 import { QUERY_SINGLE_JOB } from "../../utils/queries";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
+
 export default function Job() {
     const { jobId } = useParams();
     const { loading, data } = useQuery(QUERY_SINGLE_JOB, {
