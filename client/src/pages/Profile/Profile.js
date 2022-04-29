@@ -2,17 +2,30 @@ import "./index.css";
 import { React, useState } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import audioWave from "../../assets/audioWave.jpeg"
+import { QUERY_USER , QUERY_JOBS_BY_USER} from "../../utils/queries";
+import {useQuery , useMutation} from "@apollo/client";
 
 export default function Profile() {
-  // still needs query using apollo client to get user data
-  const [userInfo, setUserInfo] = useState({
-      firstName: "Sami",
-      lastName: "Fares",
-      email: "test@email.com",
-  });
-
+//  const {loadiing,data}=useQuery(QUERY_USER)
+ const {loading,data}=useQuery(QUERY_JOBS_BY_USER)
+  // const [userInfo, setUserInfo] = useState({
+  //     firstName: "Sami",
+  //     lastName: "Fares",
+  //     email: "test@email.com",
+  // });
+  // console.log(data);
+  // setUserInfo(data.user)
+  // console.log(userInfo);
+  // const userInfo=data?.user;
+  const jobInfo=data?.jobsByUser;
+  function testing() {
+    // console.log(userInfo);
+    console.log(jobInfo);
+  }
+  if(loading){return <h2>"loading"</h2> }
   return (
-      <Row className=" justify-content-center" id="profile">    
+      <Row onClick={(e)=> {e.preventDefault();testing()}}className=" justify-content-center" id="profile">    
+      {jobInfo.map(job=>{return <div>{job.name}</div>})}
         <Card className="col">
           <Card.Img variant="top" src={audioWave} />
           <Card.Body>

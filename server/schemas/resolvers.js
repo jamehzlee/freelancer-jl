@@ -29,9 +29,19 @@ const resolvers = {
     },
 
     user: async (parent, args, context) => {
+      console.log(context.user);
       const user = await User.findById(context.user._id);
-
+      console.log(user);
       return user;
+    },
+    jobsByUser: async (parent, args, context) => {
+      
+      if (context) {
+        return await Job.find({user:context.user._id}).populate("category").populate("user");
+   
+      
+      }
+
     },
   },
   Mutation: {

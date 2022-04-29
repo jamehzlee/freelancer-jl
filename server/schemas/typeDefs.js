@@ -33,6 +33,7 @@ const typeDefs = gql`
     jobsByCategory(category: ID): [Job]
     job(jobId: ID!): Job
     user: User
+    jobsByUser: [Job]
   }
 
   type Mutation {
