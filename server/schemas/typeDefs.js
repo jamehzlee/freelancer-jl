@@ -30,10 +30,12 @@ const typeDefs = gql`
 
   type Query {
     categories: [Category]
-    jobsByCategory(category: ID): [Job]
     job(jobId: ID!): Job
-    user(userId: ID!): User
-    jobsByUser(userId: ID!): [Job]
+
+    allJobs: [Job]
+
+    jobsByCategory(category: ID): [Job]
+    user: User
   }
 
   type Mutation {
@@ -43,12 +45,14 @@ const typeDefs = gql`
       email: String!
       password: String!
     ): Auth
+    
     userUpdate(
       firstName: String
       lastName: String
       email: String
       password: String
     ): User
+    
     userDelete(id: ID!): User
     jobAdd(
       name: String!
@@ -56,6 +60,7 @@ const typeDefs = gql`
       price: Float!
       category: ID!
     ): Job
+    
     jobUpdate(id: ID!, name: String, description: String, price: Float): Job
     jobDelete(id: ID!): Job
     login(email: String!, password: String!): Auth

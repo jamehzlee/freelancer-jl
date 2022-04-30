@@ -2,64 +2,56 @@ import "./index.css";
 import { React, useState } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import audioWave from "../../assets/audioWave.jpeg";
-import { QUERY_USER, QUERY_JOBS_BY_USER } from "../../utils/queries";
-import { useQuery, useMutation } from "@apollo/client";
-import { useParams } from "react-router-dom";
+import { QUERY_ALL_JOBS } from "../../utils/queries";
+import { useQuery } from "@apollo/client";
+import Auth from '../../utils/auth';
 
 export default function Profile() {
-    // const { userId } = useQuery(QUERY_USER, {
-    //   variables: {
-        
-    //   }
-    // });
-    const { loading, data } = useQuery(QUERY_JOBS_BY_USER, 
-      // {
-    //     variables: {
-    //         user,
-    //     },
-    // }
-    );
+    const auth = Auth.getProfile();
 
-    const jobInfo = data?.jobsByUser;
-    console.log(jobInfo)
-    // console.log(userId)
+    const { loading, data } = useQuery(QUERY_ALL_JOBS);
+
+    const jobs = data?.allJobs
+    console.log(jobs);
 
     return (
         <div>
-            {loading ? (
-                ""
-            ) : (
-                <Row className=" justify-content-center" id="profile">
-                    {/* {jobInfo.map(job=>{return <div>{job.name}</div>})} */}
-                    <Card className="col">
-                        <Card.Img variant="top" src={audioWave} />
-                        <Card.Body>
-                            <Card.Title>{jobInfo.name}</Card.Title>
-                            <Card.Text>
-                                Some quick example text to build on the card
-                                title and make up the bulk of the card's
-                                content.
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Body>
-                            <div className="row justify-content-between">
-                                <Button
-                                    className="col-4"
-                                    as="input"
-                                    type="button"
-                                    value="Edit"
-                                />{" "}
-                                <Button
-                                    className="col-4 bg-danger"
-                                    as="input"
-                                    type="button"
-                                    value="Delete"
-                                />{" "}
-                            </div>
-                        </Card.Body>
-                    </Card>
-                </Row>
-            )}
+            {loading
+                ? 
+                ''
+                : 
+                jobs.map((job) => {
+                    if (job.user._id === auth.data._id) {
+                        return (
+                            <Row className=" justify-content-center" id="profile" key={job._id}>
+                                <Card className="col">
+                                    <Card.Img variant="top" src={audioWave} />
+                                    <Card.Body>
+                                        <Card.Title>{job.name}</Card.Title>
+                                        <Card.Text>{job.description}</Card.Text>
+                                    </Card.Body>
+                                    <Card.Body>
+                                        <div className="row justify-content-between">
+                                            <Button
+                                                className="col-4"
+                                                as="input"
+                                                type="button"
+                                                value="Edit"
+                                            />{" "}
+                                            <Button
+                                                className="col-4 bg-danger"
+                                                as="input"
+                                                type="button"
+                                                value="Delete"
+                                            />{" "}
+                                        </div>
+                                    </Card.Body>
+                                </Card>
+                            </Row>
+                        );
+                    }
+                })
+            }
         </div>
     );
 }
