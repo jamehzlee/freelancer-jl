@@ -1,20 +1,8 @@
-#profile h1 {
-    text-align: center;
-}
-
-#profile p {
-    text-align: center;
-}
-
-#profile div {
+#profile {
     text-align: center;
 }
 
 #profile {
-    margin: 20px;
-}
-
-#profile .card {
     background-color: var(--quinary);
     margin: 30px;
     max-height: 400px;
