@@ -62,3 +62,24 @@ export const QUERY_USER = gql`
     }
   }
 `;
+export const QUERY_JOBS_BY_USER = gql`
+  query JobsByUser {
+    jobsByUser {
+      _id
+      description
+      price
+      name
+      category {
+        name
+        _id
+      }
+      user {
+        _id
+        firstName
+        lastName
+        email
+        password
+      }
+    }
+  }
+`;
