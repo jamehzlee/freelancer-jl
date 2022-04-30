@@ -7,20 +7,22 @@ import { useQuery, useMutation } from "@apollo/client";
 import { useParams } from "react-router-dom";
 
 export default function Profile() {
-    const { userId } = useQuery(QUERY_USER, {
-      variables: {
+    // const { userId } = useQuery(QUERY_USER, {
+    //   variables: {
         
-      }
-    }
-    const { loading, data } = useQuery(QUERY_JOBS_BY_USER, {
-        variables: {
-            userId,
-        },
-    });
+    //   }
+    // });
+    const { loading, data } = useQuery(QUERY_JOBS_BY_USER, 
+      // {
+    //     variables: {
+    //         user,
+    //     },
+    // }
+    );
 
     const jobInfo = data?.jobsByUser;
     console.log(jobInfo)
-    console.log(userId)
+    // console.log(userId)
 
     return (
         <div>

@@ -27,8 +27,8 @@ const resolvers = {
             }
         },
 
-        user: async (parent, args, context) => {
-            const user = await User.findById(context.user._id);
+        user: async (parent, {userId}, context) => {
+            const user = await User.findById(userId);
 
             return user;
         },

@@ -32,7 +32,7 @@ const typeDefs = gql`
     categories: [Category]
     jobsByCategory(category: ID): [Job]
     job(jobId: ID!): Job
-    user: User
+    user(userId: ID!): User
     jobsByUser(userId: ID!): [Job]
   }
 
