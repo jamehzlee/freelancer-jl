@@ -43,6 +43,7 @@ export default function Signup() {
     }
     setValid(true);
   };
+  
   return (
     <Row className="justify-content-center pt-5 mt-5">
       <Col xxl={4} xl={5} lg={6} md={7} sm={9} xs={10}>

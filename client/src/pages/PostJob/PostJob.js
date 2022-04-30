@@ -44,6 +44,7 @@ export default function PostJob() {
             ...job,
           },
         });
+        window.location.assign('/');
         console.log("Success!");
       } catch (e) {
         console.error(e);
@@ -112,6 +113,7 @@ export default function PostJob() {
               aria-label="Default select example"
               name="category"
             >
+              <option selected disabled>Please select a Category</option>
               {!loading ? (
                 categories.map((category) => {
                   return (
