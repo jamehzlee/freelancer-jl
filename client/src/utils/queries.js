@@ -30,6 +30,28 @@ query Job($jobId: ID!) {
 }
 `;
 
+export const QUERY_ALL_JOBS = gql`
+query allJobs {
+  allJobs {
+    _id
+    name
+    description
+    price
+    category {
+      _id
+      name
+    }
+    user {
+      _id
+      firstName
+      lastName
+      email
+      password
+    }
+  }
+}
+`;
+
 export const QUERY_JOBS_BY_CATEGORY = gql`
   query JobsByCategory($category: ID) {
     jobsByCategory(category: $category) {
@@ -59,27 +81,6 @@ export const QUERY_USER = gql`
       firstName
       lastName
       email
-    }
-  }
-`;
-export const QUERY_JOBS_BY_USER = gql`
-  query JobsByUser {
-    jobsByUser {
-      _id
-      description
-      price
-      name
-      category {
-        name
-        _id
-      }
-      user {
-        _id
-        firstName
-        lastName
-        email
-        password
-      }
     }
   }
 `;
