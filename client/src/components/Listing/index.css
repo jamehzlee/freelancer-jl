@@ -27,17 +27,21 @@
   max-width: 600px;
 }
 
-.card-row {
+#listings {
   padding: 30px;
 }
 
-.card-row .card-col {
+#listings .card-col {
   max-width: 250px;
   max-height: 250px;
   margin: 10px;
 }
 
-.card-col .card-body {
+#listings .card {
+  border-radius: 20px;
+}
+
+#listings .card-body {
   min-width: 200px;
   height: 200px;
 }
