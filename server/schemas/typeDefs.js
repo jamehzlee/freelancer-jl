@@ -31,9 +31,7 @@ const typeDefs = gql`
   type Query {
     categories: [Category]
     job(jobId: ID!): Job
-
     allJobs: [Job]
-
     jobsByCategory(category: ID): [Job]
     user: User
   }
