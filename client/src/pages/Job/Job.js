@@ -1,15 +1,12 @@
-import React, {useState, useEffect} from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import audioWave from "../../assets/audioWave.jpeg";
-import art from "../../assets/art.jpeg";
-import cooking from "../../assets/cooking.jpeg";
-import socialMedia from "../../assets/socialMedia.jpeg";
-import tech from "../../assets/tech.jpeg";
-
+import React from "react";
 import "./index.css";
+import { Container, Row, Card, Button } from "react-bootstrap";
+import { audioWave, art, cooking, socialMedia, tech } from "../../assets";
+
 import { QUERY_SINGLE_JOB } from "../../utils/queries";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
+
 export default function Job() {
     const { jobId } = useParams();
     const { loading, data } = useQuery(QUERY_SINGLE_JOB, {
@@ -18,10 +15,11 @@ export default function Job() {
         },
     });
     const job = data?.job || [];
-    console.log(job);
+
     let selectedImg = "";
-        if (!loading) {
-            selectedImg = job.category.name;
+
+    if (!loading) {
+        selectedImg = job.category.name;
         switch (selectedImg) {
             case "Tech":
                 selectedImg = tech;
@@ -40,10 +38,11 @@ export default function Job() {
                 break;
             default:
                 console.log("no category!");
-        }};
+        }
+    };
 
     return (
-        <div>
+        <div id="job-content">
             {loading ? (
                 ""
             ) : (
@@ -63,15 +62,7 @@ export default function Job() {
                             </Card.Body>
                             <Card.Body>
                                 <div className="row justify-content-center text-center">
-                                    <a href={`mailto:${job.user.email}`}>
-                                    <Button
-                                       className="col-4 center bg-success"
-                                        as="input"
-                                        type="button"
-                                        value="Hire Me"
-                                        id="hireButton"
-                                    ></Button>
-                                    </a>
+                                    <Button href={`mailto:${job.user.email}`} className="col-4 bg-success">Hire Me</Button>
                                 </div>
                             </Card.Body>
                         </Card>
