@@ -9,7 +9,7 @@ export default function JobCard({job}) {
         <div className="card-body">
           <h5 className="card-title">{job.name}</h5>
           <h6 className="card-subtitle mb-2">${job.price}</h6>
-          <p className="card-text">{job.description}</p>
+          <p className="row card-text">{job.description}</p>
         </div>
       </div>
     </Link>
