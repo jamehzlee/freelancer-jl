@@ -25,6 +25,10 @@
     margin-right: 10px;
 }
 
+#main-nav a:hover {
+    text-decoration: underline;
+}
+
 #main-nav .nav-link {
     max-width: 200px;
 }
