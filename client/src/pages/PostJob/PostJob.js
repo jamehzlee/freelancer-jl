@@ -113,7 +113,7 @@ export default function PostJob() {
               aria-label="Default select example"
               name="category"
             >
-              <option selected disabled>Please select a Category</option>
+              <option selected disabled value={''}>Please select a Category</option>
               {!loading ? (
                 categories.map((category) => {
                   return (
