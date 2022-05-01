@@ -28,7 +28,7 @@ const resolvers = {
     },
     
     allJobs: async (parent, args, context) => {
-      return await Job.find().populate('category');
+      return await Job.find().populate('category').populate('user');
     },
 
     user: async (parent, args, context) => {
