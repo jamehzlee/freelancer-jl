@@ -1,11 +1,9 @@
-# Freelancer
+<h1><a href='https://freelancersal.herokuapp.com/'>Freelancer</a></h1>
 
 ## Description
 A brand new application designed to help freelancers as well as consumers. A platform where you can find someone with the skills needed to get a job done, as well as a place where you can go to find work and monetize off of your own skillsets.
 
 ## Table of Contents
-
-[Links](#links)
 
 [Media](#media)
 
@@ -18,9 +16,6 @@ A brand new application designed to help freelancers as well as consumers. A pla
 [License](#license)
 
 [Questions](#questions)
-
-## Links
-[Freelancer](https://freelancersal.herokuapp.com/)
 
 ## Media
 The following image shows the home page: 
