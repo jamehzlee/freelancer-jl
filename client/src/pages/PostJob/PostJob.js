@@ -1,3 +1,4 @@
+import "./index.css"
 import React, { useState } from "react";
 import { useMutation, useQuery } from "@apollo/client";
 import { QUERY_CATEGORIES } from "../../utils/queries";
@@ -56,7 +57,7 @@ export default function PostJob() {
   return (
     <Row className="justify-content-center mt-5">
       <Col xxl={4} xl={5} lg={6} md={7} sm={9} xs={10}>
-        <Form noValidate validated={valid} onSubmit={handleSubmit}>
+        <Form noValidate validated={valid} onSubmit={handleSubmit} id='postjob-form'>
           <Form.Group className="mb-4">
             <Form.Label hidden={true}>Title</Form.Label>
             <Form.Control
@@ -65,7 +66,6 @@ export default function PostJob() {
               required
               type="text"
               name="name"
-              // value={formState.title}
               onChange={handleChange}
             />
             <Form.Control.Feedback type="invalid">
@@ -130,10 +130,12 @@ export default function PostJob() {
               Please select a catgeory.
             </Form.Control.Feedback>
           </Form.Group>
-
-          <Button variant="primary" type="submit">
-            POST
-          </Button>
+          
+          <Row className="justify-content-center">
+            <Button className="col" variant="primary" type="submit">
+              Post Job
+            </Button>
+          </Row>
         </Form>
       </Col>
     </Row>

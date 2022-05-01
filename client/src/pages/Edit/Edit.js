@@ -1,6 +1,6 @@
 import "./index.css";
 import React, { useState } from "react";
-import { useMutation, useQuery } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { UPDATE_JOB } from "../../utils/mutations";
 import { useParams } from "react-router-dom";
@@ -56,7 +56,7 @@ export default function Edit() {
   return (
     <Row className="justify-content-center mt-5">
       <Col xxl={4} xl={5} lg={6} md={7} sm={9} xs={10}>
-        <Form noValidate validated={valid} onSubmit={handleSubmit}>
+        <Form noValidate validated={valid} onSubmit={handleSubmit} id='edit-form'>
           <Form.Group className="mb-4">
             <Form.Label hidden={true}>Title</Form.Label>
             <Form.Control

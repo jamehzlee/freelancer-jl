@@ -47,7 +47,7 @@ export default function Signup() {
   return (
     <Row className="justify-content-center pt-5 mt-5">
       <Col xxl={4} xl={5} lg={6} md={7} sm={9} xs={10}>
-        <Form noValidate validated={valid} onSubmit={handleSubmit}>
+        <Form noValidate validated={valid} onSubmit={handleSubmit} id='signup-form'>
           <Form.Group className="mb-4">
             <Form.Label hidden={true}>First Name</Form.Label>
             <Form.Control
@@ -111,9 +111,12 @@ export default function Signup() {
               Please enter a password.
             </Form.Control.Feedback>
           </Form.Group>
-          <Button variant="primary" type="submit">
-            Sign Up
-          </Button>
+
+          <Row className="justify-content-center">
+            <Button className="col" variant="primary" type="submit" id="signup-btn">
+              Sign Up
+            </Button>
+          </Row>
         </Form>
       </Col>
     </Row>
