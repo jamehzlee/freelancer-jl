@@ -1,0 +1,33 @@
+#profile-card {
+    max-height: 400px;
+}
+
+#profile-card .card-img {
+    max-height: 154px;
+    padding: 7px;
+}
+
+#profile-card .card-body {
+    padding: 0;
+    margin-top: 5px;
+}
+
+#profile-card .card-title {
+    color: rgba(255,255,255,.65);
+}
+
+
+#profile-card .card-text {
+    padding: 15px;
+}
+
+#profile-card .btn {
+    min-width: 70px;
+    height: 40px;
+}
+
+#buttons  .row {
+    padding: 10px;
+    padding-top: 0;
+    align-items: flex-end;
+}
