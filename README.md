@@ -1,7 +1,7 @@
 # Freelancer
 
 ## Description
-A brand new application for freelancers and consumers from around the world to connect with eachother for help completing tasks that will take time away from time with the family!
+A brand new application designed to help freelancers as well as consumers. A platform where you can find someone with the skills needed to get a job done, as well as a place where you can go to find work and monetize off of your own skillsets.
 
 ## Table of Contents
 
@@ -24,10 +24,7 @@ A brand new application for freelancers and consumers from around the world to c
 
 ## Media
 The following image shows the home page: 
-![Home page of SnapShot](./public/images/main-page.png)
-
-Screen shot of adding a new post:
-![New post screen shot](./public/images/new-post.png)
+![Home page of Freelancer!](./client/src/assets/landing.png)
 
 ## Installation
 To install the necessary dependencies, run the following command:
