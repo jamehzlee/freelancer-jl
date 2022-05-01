@@ -12,7 +12,7 @@ export default function Profile() {
   const jobs = data?.allJobs;
 
   return (
-    <div className="row justify-content-center p-5" key={''} >
+    <div className="row justify-content-center" id="profile" >
       {loading
         ? ""
         : jobs.map((job) => {
@@ -44,8 +44,10 @@ export default function Profile() {
               }
 
               return (
-                <div className="col" key={job}>
-                  <ProfileItem job={job} selectedImg={selectedImg} />
+                <div className="col" id="profile-col">
+                  <div className="row justify-content-center">
+                    <ProfileItem job={job} selectedImg={selectedImg} />
+                  </div>
                 </div>
               );
             }

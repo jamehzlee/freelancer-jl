@@ -8,7 +8,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-import { Home, Job, Login, Signup, Profile, PostJob } from "./pages"
+import { Home, Job, Login, Signup, Profile, PostJob, Edit } from "./pages"
 import { Listing } from "./components"
 
 
@@ -42,6 +42,7 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
             <Route path="profile" element={<Profile />} /> 
+            <Route path="profile/edit/:jobId" element={<Edit />} /> 
             <Route path="post" element={<PostJob />} /> 
           </Route>
         </Routes>

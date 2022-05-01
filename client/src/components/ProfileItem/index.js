@@ -1,4 +1,4 @@
-// import "./index.css";
+import "./index.css";
 import { useMutation } from "@apollo/client";
 import React from "react";
 import { Card, Button } from "react-bootstrap";
@@ -23,13 +23,13 @@ export default function ProfileItem({ job, selectedImg }) {
   };
 
   return (
-    <Card className="col" id="profile">
+    <Card className="col" id="profile-card">
       <Card.Img src={selectedImg} />
       <Card.Body>
         <Card.Title>{job.name}</Card.Title>
         <Card.Text>{job.description}</Card.Text>
       </Card.Body>
-      <Card.Body>
+      <Card.Body id="buttons">
         <div className="row justify-content-between">
           <Button
             className="col-4"

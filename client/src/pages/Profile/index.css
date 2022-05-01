@@ -2,29 +2,15 @@
     text-align: center;
 }
 
-#profile {
+#profile-col{
     background-color: var(--quinary);
-    margin: 30px;
     max-height: 400px;
     min-height: 250px;
+    min-width: 300px;
     max-width: 300px;
-    min-width: 250px;
+    margin: 30px;
 }
 
-#profile .card-body {
-    padding: 0;
-    margin: 10px;
-}
-
-#profile img {
-    align-self: center;
-    margin: 10px;
-}
-
-#profile .card-title {
-    color: rgba(255,255,255,.65);
-}
-
-#profile .btn {
-    min-width: 70px;
+#profile-col .row {
+    height: 100%;
 }
