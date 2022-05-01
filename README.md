@@ -20,7 +20,7 @@ A brand new application designed to help freelancers as well as consumers. A pla
 [Questions](#questions)
 
 ## Links
-[Freelancer](https://snapshotban.herokuapp.com/)
+[Freelancer](https://freelancersal.herokuapp.com/)
 
 ## Media
 The following image shows the home page: 
