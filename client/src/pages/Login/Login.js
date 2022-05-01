@@ -47,7 +47,7 @@ export default function Login() {
 
   return (
     <Row className="justify-content-center pt-5 mt-5">
-      <Col xxl={4} xl={5} lg={6} md={7} sm={9} xs={10} className="">
+      <Col xxl={4} xl={5} lg={6} md={7} sm={9} xs={10}>
         {data ? (
           window.location.assign("/")
         ) : (
@@ -55,7 +55,7 @@ export default function Login() {
             noValidate
             validated={valid}
             onSubmit={handleSubmit}
-            className=""
+            id='login-form'
           >
             <Form.Group className="mb-4">
               <Form.Label hidden={true}>Email Address</Form.Label>
@@ -66,7 +66,6 @@ export default function Login() {
                 placeholder="Email Address"
                 value={formState.email}
                 onChange={handleChange}
-                className=""
               />
               <Form.Control.Feedback type="invalid">
                 Please enter a valid email address.
@@ -82,15 +81,17 @@ export default function Login() {
                 placeholder="Password"
                 value={formState.password}
                 onChange={handleChange}
-                className=""
               />
               <Form.Control.Feedback type="invalid">
                 Please enter a password.
               </Form.Control.Feedback>
             </Form.Group>
-            <Button variant="primary" type="submit">
-              Log In
-            </Button>
+            
+            <Row className="justify-content-center">
+              <Button className="col" variant="primary" type="submit">
+                Log In
+              </Button>
+            </Row>
           </Form>
         )}
       </Col>
