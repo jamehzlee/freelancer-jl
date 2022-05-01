@@ -9,7 +9,7 @@ export default function Header() {
     Auth.logout();
   };
 
-  const isLoggedIn = Auth.getToken();
+  const isLoggedIn = Auth.loggedIn();
 
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark" id="main-nav" className="col">
