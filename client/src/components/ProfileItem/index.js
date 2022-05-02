@@ -27,6 +27,7 @@ export default function ProfileItem({ job, selectedImg }) {
       <Card.Img src={selectedImg} />
       <Card.Body>
         <Card.Title>{job.name}</Card.Title>
+        <Card.Text>${job.price}</Card.Text>
         <Card.Text>{job.description}</Card.Text>
       </Card.Body>
       <Card.Body id="buttons">

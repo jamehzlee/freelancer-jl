@@ -1,9 +1,10 @@
 import "./index.css";
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { Form, Button, Row, Col } from "react-bootstrap";
+import { Form, Button, Row, Col, Container } from "react-bootstrap";
 import { UPDATE_JOB } from "../../utils/mutations";
 import { useParams } from "react-router-dom";
+import { Footer, Header } from "../../components";
 
 export default function Edit() {
   const { jobId } = useParams();
@@ -14,7 +15,6 @@ export default function Edit() {
     description: "",
   });
   const [addJob, { error }] = useMutation(UPDATE_JOB);
-
 
   const handleChange = (event) => {
     let { name, value } = event.target;
@@ -54,65 +54,81 @@ export default function Edit() {
     setValid(true);
   };
   return (
-    <Row className="justify-content-center mt-5">
-      <Col xxl={4} xl={5} lg={6} md={7} sm={9} xs={10}>
-        <Form noValidate validated={valid} onSubmit={handleSubmit} id='edit-form'>
-          <Form.Group className="mb-4">
-            <Form.Label hidden={true}>Title</Form.Label>
-            <Form.Control
-              className=""
-              placeholder="Title"
-              required
-              type="text"
-              name="name"
-              // value={formState.title}
-              onChange={handleChange}
-            />
-            <Form.Control.Feedback type="invalid">
-              Please enter a title.
-            </Form.Control.Feedback>
-          </Form.Group>
+    <Container id="page">
+      <Row className="row-content justify-content-center">
+        <div id="content-top" className="col align-self-start">
+          <div className="row">
+            <Header />
+            <Row className="justify-content-center mt-5">
+              <Col xxl={4} xl={5} lg={6} md={7} sm={9} xs={10}>
+                <Form
+                  noValidate
+                  validated={valid}
+                  onSubmit={handleSubmit}
+                  id="edit-form"
+                >
+                  <Form.Group className="mb-4">
+                    <Form.Label hidden={true}>Title</Form.Label>
+                    <Form.Control
+                      className=""
+                      placeholder="Title"
+                      required
+                      type="text"
+                      name="name"
+                      // value={formState.title}
+                      onChange={handleChange}
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      Please enter a title.
+                    </Form.Control.Feedback>
+                  </Form.Group>
 
-          <Form.Group className="mb-4">
-            <Form.Label hidden={true}>Price</Form.Label>
-            <Form.Control
-              className=""
-              placeholder="$$$"
-              required
-              type="number"
-              name="price"
-              value={formState.price}
-              onChange={handleChange}
-            />
-            <Form.Control.Feedback type="invalid">
-              Please enter a price.
-            </Form.Control.Feedback>
-          </Form.Group>
+                  <Form.Group className="mb-4">
+                    <Form.Label hidden={true}>Price</Form.Label>
+                    <Form.Control
+                      className=""
+                      placeholder="$$$"
+                      required
+                      type="number"
+                      name="price"
+                      value={formState.price}
+                      onChange={handleChange}
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      Please enter a price.
+                    </Form.Control.Feedback>
+                  </Form.Group>
 
-          <Form.Group className="mb-4">
-            <Form.Label hidden={true}>Description</Form.Label>
-            <Form.Control
-              className=""
-              placeholder="Description"
-              required
-              as="textarea"
-              rows={5}
-              name="description"
-              value={formState.description}
-              onChange={handleChange}
-            />
-            <Form.Control.Feedback type="invalid">
-              Please enter a valid description.
-            </Form.Control.Feedback>
-          </Form.Group>
+                  <Form.Group className="mb-4">
+                    <Form.Label hidden={true}>Description</Form.Label>
+                    <Form.Control
+                      className=""
+                      placeholder="Description"
+                      required
+                      as="textarea"
+                      rows={5}
+                      name="description"
+                      value={formState.description}
+                      onChange={handleChange}
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      Please enter a valid description.
+                    </Form.Control.Feedback>
+                  </Form.Group>
 
-          <Row className="justify-content-center" id="edit-submit">
-            <Button className="col" variant="success" type="submit">
-              Edit Job
-            </Button>
-          </Row>
-        </Form>
-      </Col>
-    </Row>
+                  <Row className="justify-content-center" id="edit-submit">
+                    <Button className="col" variant="success" type="submit">
+                      Edit Job
+                    </Button>
+                  </Row>
+                </Form>
+              </Col>
+            </Row>
+          </div>
+        </div>
+
+        <Footer />
+      </Row>
+    </Container>
   );
 }

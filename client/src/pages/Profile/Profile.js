@@ -5,6 +5,8 @@ import { useQuery } from "@apollo/client";
 import { audioWave, art, cooking, socialMedia, tech } from "../../assets";
 import Auth from "../../utils/auth";
 import ProfileItem from "../../components/ProfileItem";
+import { Footer, Header } from "../../components";
+import { Container, Row } from "react-bootstrap";
 
 export default function Profile() {
   const auth = Auth.getProfile();
@@ -12,46 +14,56 @@ export default function Profile() {
   const jobs = data?.allJobs;
 
   return (
-    <div className="row justify-content-center" id="profile" >
-      {loading
-        ? ""
-        : jobs.map((job) => {
-            if (job.user._id === auth.data._id) {
-              const id = job._id;
-              let selectedImg = "";
+    <Container id="page">
+      <Row className="row-content justify-content-center">
+        <div id="content-top" className="col align-self-start">
+          <div className="row">
+            <Header />
+          <div className="row justify-content-center" id="profile">
+            {loading
+              ? ""
+              : jobs.map((job) => {
+                  if (job.user._id === auth.data._id) {
+                    const id = job._id;
+                    let selectedImg = "";
 
-              if (job.user._id === auth.data._id) {
-                selectedImg = job.category.name;
-                switch (selectedImg) {
-                  case "Tech":
-                    selectedImg = tech;
-                    break;
-                  case "Audio":
-                    selectedImg = audioWave;
-                    break;
-                  case "Art":
-                    selectedImg = art;
-                    break;
-                  case "Cooking":
-                    selectedImg = cooking;
-                    break;
-                  case "Social Media":
-                    selectedImg = socialMedia;
-                    break;
-                  default:
-                    console.log("no category!");
-                }
-              }
+                    if (job.user._id === auth.data._id) {
+                      selectedImg = job.category.name;
+                      switch (selectedImg) {
+                        case "Tech":
+                          selectedImg = tech;
+                          break;
+                        case "Audio":
+                          selectedImg = audioWave;
+                          break;
+                        case "Art":
+                          selectedImg = art;
+                          break;
+                        case "Cooking":
+                          selectedImg = cooking;
+                          break;
+                        case "Social Media":
+                          selectedImg = socialMedia;
+                          break;
+                        default:
+                          console.log("no category!");
+                      }
+                    }
 
-              return (
-                <div className="col" id="profile-col">
-                  <div className="row justify-content-center">
-                    <ProfileItem job={job} selectedImg={selectedImg} />
-                  </div>
-                </div>
-              );
-            }
-          })}
-    </div>
+                    return (
+                      <div className="col" id="profile-col">
+                        <div className="row justify-content-center">
+                          <ProfileItem job={job} selectedImg={selectedImg} />
+                        </div>
+                      </div>
+                    );
+                  }
+                })}
+          </div>
+          </div>
+        </div>
+        <Footer />
+      </Row>
+    </Container>
   );
 }
