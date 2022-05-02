@@ -1,6 +1,6 @@
 import "./index.css";
 import React from "react";
-import { Header, Footer } from "../../components";
+import { Header, Footer, Listing } from "../../components";
 import { Outlet } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
@@ -13,7 +13,7 @@ export default function Home() {
         <div id="content-top" className="col align-self-start">
           <div className="row">
             <Header />
-            <Outlet />
+            <Listing />
           </div>
         </div>
 
