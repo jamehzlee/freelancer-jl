@@ -71,7 +71,9 @@ export default function Listing() {
           </ul>
         </div>
         <div id="but-row" className="row ms-auto mx-3">
-          <Button as={Link} className="col" to="/post">Post</Button>
+          {/* <Button as={Link} className="col" to="/post">Post</Button> */}
+          <Link className="col" to="/post">Post</Link>
+          
         </div>
       </nav>
 
