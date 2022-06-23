@@ -7,6 +7,7 @@ import Auth from "../../utils/auth";
 import ProfileItem from "../../components/ProfileItem";
 import { Footer, Header } from "../../components";
 import { Container, Row } from "react-bootstrap";
+import Grid from "@mui/material/Grid";
 
 export default function Profile() {
   const auth = Auth.getProfile();
@@ -16,53 +17,50 @@ export default function Profile() {
   return (
     <Container id="page">
       <Row className="row-content justify-content-center">
-        <div id="content-top" className="col align-self-start">
-          <div className="row">
-            <Header />
-          <div className="row justify-content-center" id="profile">
-            {loading
-              ? ""
-              : jobs.map((job) => {
+        <Header />
+
+        <Grid container justifyContent="center" spacing={4}>
+          {loading
+            ? ""
+            : jobs.map((job, i) => {
+                if (job.user._id === auth.data._id) {
+                  const id = job._id;
+                  let selectedImg = "";
+
                   if (job.user._id === auth.data._id) {
-                    const id = job._id;
-                    let selectedImg = "";
-
-                    if (job.user._id === auth.data._id) {
-                      selectedImg = job.category.name;
-                      switch (selectedImg) {
-                        case "Tech":
-                          selectedImg = tech;
-                          break;
-                        case "Audio":
-                          selectedImg = audioWave;
-                          break;
-                        case "Art":
-                          selectedImg = art;
-                          break;
-                        case "Cooking":
-                          selectedImg = cooking;
-                          break;
-                        case "Social Media":
-                          selectedImg = socialMedia;
-                          break;
-                        default:
-                          console.log("no category!");
-                      }
+                    selectedImg = job.category.name;
+                    switch (selectedImg) {
+                      case "Tech":
+                        selectedImg = tech;
+                        break;
+                      case "Audio":
+                        selectedImg = audioWave;
+                        break;
+                      case "Art":
+                        selectedImg = art;
+                        break;
+                      case "Cooking":
+                        selectedImg = cooking;
+                        break;
+                      case "Social Media":
+                        selectedImg = socialMedia;
+                        break;
+                      default:
+                        console.log("no category!");
+                        break;
                     }
-
-                    return (
-                      <div className="col" id="profile-col">
-                        <div className="row justify-content-center">
-                          <ProfileItem job={job} selectedImg={selectedImg} />
-                        </div>
-                      </div>
-                    );
                   }
-                })}
-          </div>
-          </div>
-        </div>
-        <Footer />
+
+                  return (
+                    <Grid item key={i}>
+                      <ProfileItem job={job} selectedImg={selectedImg} />
+                    </Grid>
+                  );
+                }
+              })}
+        </Grid>
+
+        <Footer/>
       </Row>
     </Container>
   );
